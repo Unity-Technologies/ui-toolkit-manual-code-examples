@@ -1,0 +1,25 @@
+.slot {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    background-color: rgb(255, 255, 255);
+    border-top-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.slot_row {
+    flex-direction: row;
+}
+
+.object {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 30px;
+    background-color: rgb(0, 0, 0);
+}
