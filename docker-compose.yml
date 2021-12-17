@@ -1,0 +1,36 @@
+# docker-compose setup for local development
+version: '3.4'
+
+services:
+  ads-kotlin-service-template-builder:
+    build:
+      context: .
+      target: builder
+      args:
+        build_jar: "false"
+    entrypoint: ["/usr/local/bin/wait-for.sh", "db:5432", "--"]
+    command: gradle run
+
+    ports:
+      - 8080:8080
+      - 8081:8081
+    depends_on:
+      - "nats"
+      - "db"
+    environment:
+      - DB_SERVER_URL=jdbc:postgresql://db/todo_change_me
+      - NATS_SERVERS=nats:4222
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=todo_change_me
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - 5432:5432
+
+  nats:
+    image: nats
+    ports:
+      - 4222:4222
+      - 8222:8222

@@ -1,0 +1,91 @@
+buildscript {
+    ext.kotlin_version = '1.5.31'
+    ext.ktor_version = '1.6.4'
+    ext.koin_version = '3.1.2'
+    ext.junit_version = '5.8.1'
+    ext.log4j2_version = '2.16.0'
+    ext.exposed_version = '0.35.1'
+}
+
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "${kotlin_version}"
+    id 'org.jlleitschuh.gradle.ktlint' version '10.2.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.0'
+    id 'application'
+    id 'jacoco'
+}
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = 'com.unity.template.ApplicationKt'
+defaultTasks 'run'
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    finalizedBy jacocoTestReport
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
+    implementation "io.ktor:ktor-client-jetty:$ktor_version"
+    implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
+    implementation "io.ktor:ktor-jackson:$ktor_version"
+    implementation "io.ktor:ktor-metrics:$ktor_version"
+    implementation "io.ktor:ktor-server-core:$ktor_version"
+    implementation "io.ktor:ktor-server-netty:$ktor_version"
+    implementation "io.ktor:ktor-websockets:$ktor_version"
+
+    implementation "io.insert-koin:koin-ktor:$koin_version"
+
+    implementation 'io.github.microutils:kotlin-logging:2.0.11'
+
+    implementation "org.postgresql:postgresql:42.2.24"
+    implementation "com.zaxxer:HikariCP:5.0.0"
+    implementation "org.flywaydb:flyway-core:7.15.0"
+
+    implementation "org.apache.logging.log4j:log4j:$log4j2_version"
+    implementation "org.apache.logging.log4j:log4j-slf4j18-impl:$log4j2_version"
+
+    implementation "org.jetbrains.exposed:exposed-core:$exposed_version"
+    implementation "org.jetbrains.exposed:exposed-dao:$exposed_version"
+    implementation "org.jetbrains.exposed:exposed-jdbc:$exposed_version"
+    implementation "org.jetbrains.exposed:exposed-java-time:$exposed_version"
+
+    implementation 'io.nats:jnats:2.11.2'
+
+    implementation 'io.micrometer:micrometer-registry-prometheus:1.7.4'
+
+    testImplementation "io.ktor:ktor-client-mock:$ktor_version"
+    testImplementation "io.ktor:ktor-client-mock-jvm:$ktor_version"
+    testImplementation "io.ktor:ktor-server-tests:$ktor_version"
+
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+
+    testImplementation "io.mockk:mockk:1.12.0"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+}
+
+shadowJar {
+    archiveClassifier = ''
+    archiveVersion = ''
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
+
+jacoco.toolVersion = "0.8.7"
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
