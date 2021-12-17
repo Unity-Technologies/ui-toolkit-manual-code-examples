@@ -63,10 +63,14 @@ public class MyCustomEditor : EditorWindow
     private void PrintClickMessage(ClickEvent evt)
     {
         ++m_ClickCount;
+
+        //Because of the names we gave the buttons and toggles, we can use the
+        //button name to find the toggle name.
         Button button = evt.currentTarget as Button;
         string buttonNumber = button.name.Substring(m_ButtonPrefix.Length);
         string toggleName = "toggle" + buttonNumber;
         Toggle toggle = rootVisualElement.Q<Toggle>(toggleName);
+
         Debug.Log("Button was clicked!" +
             (toggle.value ? " Count: " + m_ClickCount : ""));
     }
