@@ -1,6 +1,3 @@
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
 .bash_history
 
 # Please do not add editor specific ignore lines to this file. Unity best practices
