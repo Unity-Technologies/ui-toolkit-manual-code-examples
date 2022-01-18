@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="TabbedMenu-style.uss" />
+    <ui:VisualElement name="tabs">
+        <ui:Label name="LondonTab" text="London" class="tab currentlySelectedTab" />
+        <ui:Label name="ParisTab" text="Paris" class="tab" />
+        <ui:Label name="OttawaTab" text="Ottawa" class="tab" />
+    </ui:VisualElement>
+    <ui:VisualElement name="tabContent">
+        <ui:Label text="London is the capital city of England" name="LondonContent" />
+        <ui:Label text="Paris is the capital of France" name="ParisContent" class="unselectedContent" />
+        <ui:Label text="Ottawa is the capital of Canada" name="OttawaContent" class="unselectedContent" />
+    </ui:VisualElement>
+</ui:UXML>
