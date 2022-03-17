@@ -1,32 +1,31 @@
-using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
 
 public class PlanetsMultiColumnTreeView : PlanetsWindow
 {
     [MenuItem("Planets/Multicolumn Tree")]
-    private static void Summon()
+    static void Summon()
     {
-        PlanetsMultiColumnTreeView window = GetWindow<PlanetsMultiColumnTreeView>("Multicolumn Planet Tree");
-        window.minSize = new Vector2(500, 500);
+        GetWindow<PlanetsMultiColumnTreeView>("Multicolumn Planet Tree");
     }
 
-    private void CreateGUI()
+    void CreateGUI()
     {
-        rootVisualElement.Add(uxml.Instantiate());
-        MultiColumnTreeView treeView = rootVisualElement.Q<MultiColumnTreeView>();
+        uxml.CloneTree(rootVisualElement);
+        var treeView = rootVisualElement.Q<MultiColumnTreeView>();
 
-        //Call MultiColumnTreeView.SetRootItems() to populate the data in the tree.
-        treeView.SetRootItems<PlanetOrGroup>(treeRoots);
+        // Call MultiColumnTreeView.SetRootItems() to populate the data in the tree.
+        treeView.SetRootItems(treeRoots);
 
-        //For each column, set Column.makeCell to initialize each node in the tree.
+        // For each column, set Column.makeCell to initialize each node in the tree.
+        // You can index the columns array with names or numerical indices.
         treeView.columns["name"].makeCell = () => new Label();
         treeView.columns["populated"].makeCell = () => new Toggle();
 
-        //For each column, set Column.bindCell to bind an initialized node to a data item.
+        // For each column, set Column.bindCell to bind an initialized node to a data item.
         treeView.columns["name"].bindCell = (VisualElement element, int index) =>
-            (element as Label).text = treeView.GetItemDataForIndex<PlanetOrGroup>(index).name;
+            (element as Label).text = treeView.GetItemDataForIndex<IPlanetOrGroup>(index).name;
         treeView.columns["populated"].bindCell = (VisualElement element, int index) =>
-            (element as Toggle).value = treeView.GetItemDataForIndex<PlanetOrGroup>(index).populated;
+            (element as Toggle).value = treeView.GetItemDataForIndex<IPlanetOrGroup>(index).populated;
     }
 }

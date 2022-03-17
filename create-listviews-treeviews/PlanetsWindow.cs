@@ -10,7 +10,7 @@ public class PlanetsWindow : EditorWindow
     protected VisualTreeAsset uxml;
 
     // Nested interface that may be either a single planet or a group of planets.
-    protected interface PlanetOrGroup
+    protected interface IPlanetOrGroup
     {
         public string name
         {
@@ -24,7 +24,7 @@ public class PlanetsWindow : EditorWindow
     }
 
     // Nested class that represents a planet.
-    protected class Planet : PlanetOrGroup
+    protected class Planet : IPlanetOrGroup
     {
         public string name
         {
@@ -44,7 +44,7 @@ public class PlanetsWindow : EditorWindow
     }
 
     // Nested class that represents a group of planets.
-    protected class PlanetGroup : PlanetOrGroup
+    protected class PlanetGroup : IPlanetOrGroup
     {
         public string name
         {
@@ -55,7 +55,7 @@ public class PlanetsWindow : EditorWindow
         {
             get
             {
-                bool anyPlanetPopulated = false;
+                var anyPlanetPopulated = false;
                 foreach (Planet planet in planets)
                 {
                     anyPlanetPopulated = anyPlanetPopulated || planet.populated;
@@ -97,8 +97,8 @@ public class PlanetsWindow : EditorWindow
     {
         get
         {
-            List<Planet> retVal = new List<Planet>(8);
-            foreach (PlanetGroup group in planetGroups)
+            var retVal = new List<Planet>(8);
+            foreach (var group in planetGroups)
             {
                 retVal.AddRange(group.planets);
             }
@@ -106,22 +106,22 @@ public class PlanetsWindow : EditorWindow
         }
     }
 
-    //Expresses planet data as a list of TreeViewItemData objects. Needed for TreeView and MultiColumnTreeView.
-    protected static IList<TreeViewItemData<PlanetOrGroup>> treeRoots
+    // Expresses planet data as a list of TreeViewItemData objects. Needed for TreeView and MultiColumnTreeView.
+    protected static IList<TreeViewItemData<IPlanetOrGroup>> treeRoots
     {
         get
         {
             int id = 0;
-            List<TreeViewItemData<PlanetOrGroup>> roots = new List<TreeViewItemData<PlanetOrGroup>>(planetGroups.Count);
-            foreach (PlanetGroup group in planetGroups)
+            var roots = new List<TreeViewItemData<IPlanetOrGroup>>(planetGroups.Count);
+            foreach (var group in planetGroups)
             {
-                List<TreeViewItemData<PlanetOrGroup>> planetsInGroup = new List<TreeViewItemData<PlanetOrGroup>>(group.planets.Count);
-                foreach (Planet planet in group.planets)
+                var planetsInGroup = new List<TreeViewItemData<IPlanetOrGroup>>(group.planets.Count);
+                foreach (var planet in group.planets)
                 {
-                    planetsInGroup.Add(new TreeViewItemData<PlanetOrGroup>(id++, planet));
+                    planetsInGroup.Add(new TreeViewItemData<IPlanetOrGroup>(id++, planet));
                 }
 
-                roots.Add(new TreeViewItemData<PlanetOrGroup>(id++, group, planetsInGroup));
+                roots.Add(new TreeViewItemData<IPlanetOrGroup>(id++, group, planetsInGroup));
             }
             return roots;
         }

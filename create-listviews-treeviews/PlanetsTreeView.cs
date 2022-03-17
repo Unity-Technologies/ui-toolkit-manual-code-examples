@@ -1,29 +1,27 @@
-using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
 
 public class PlanetsTreeView : PlanetsWindow
 {
     [MenuItem("Planets/Standard Tree")]
-    private static void Summon()
+    static void Summon()
     {
-        PlanetsTreeView window = GetWindow<PlanetsTreeView>("Standard Planet Tree");
-        window.minSize = new Vector2(500, 500);
+        GetWindow<PlanetsTreeView>("Standard Planet Tree");
     }
 
-    private void CreateGUI()
+    void CreateGUI()
     {
-        rootVisualElement.Add(uxml.Instantiate());
-        TreeView treeView = rootVisualElement.Q<TreeView>();
+        uxml.CloneTree(rootVisualElement);
+        var treeView = rootVisualElement.Q<TreeView>();
 
-        //Call TreeView.SetRootItems() to populate the data in the tree.
-        treeView.SetRootItems<PlanetOrGroup>(treeRoots);
+        // Call TreeView.SetRootItems() to populate the data in the tree.
+        treeView.SetRootItems(treeRoots);
 
-        //Set TreeView.makeItem to initialize each node in the tree.
+        // Set TreeView.makeItem to initialize each node in the tree.
         treeView.makeItem = () => new Label();
 
-        //Set TreeView.bindItem to bind an initialized node to a data item.
+        // Set TreeView.bindItem to bind an initialized node to a data item.
         treeView.bindItem = (VisualElement element, int index) =>
-            (element as Label).text = treeView.GetItemDataForIndex<PlanetOrGroup>(index).name;
+            (element as Label).text = treeView.GetItemDataForIndex<IPlanetOrGroup>(index).name;
     }
 }
