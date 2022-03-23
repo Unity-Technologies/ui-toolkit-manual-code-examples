@@ -1,4 +1,4 @@
-# UI ToolKit Manual Code Examples
+# UI Toolkit Manual Code Examples
 
 This repo includes the code examples for the following Unity UI Toolkit documentation:
 
