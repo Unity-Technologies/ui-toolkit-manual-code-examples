@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:example="UIToolkitExamples">
+    <example:ExampleField label="Binding Target" binding-path="m_Value" />
+</ui:UXML>
