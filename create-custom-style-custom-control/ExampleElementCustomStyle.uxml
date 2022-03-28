@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" example="UIToolkitExamples" editor-extension-mode="False">
+    <Style src="ExampleElementCustomStyle.uss" />
+    <UIToolkitExamples.ExampleElementCustomStyle />
+</ui:UXML>
