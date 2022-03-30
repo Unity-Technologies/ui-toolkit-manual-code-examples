@@ -1,0 +1,8 @@
+.texture-preview-element {
+    width: 200px;
+    height: 200px;
+}
+
+.texture-preview-element > .unity-image {
+    flex-grow: 1;
+}

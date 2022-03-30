@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:example="UIToolkitExamples" editor-extension-mode="True">
+    <example:TexturePreviewElement binding-path="texture" />
+</ui:UXML>

@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns="UnityEngine.UIElements" example="UIToolkitExamples" editor-extension-mode="True">
+    <ui:ScrollView>
+        <ui:VisualElement class="preview-container" style="flex-wrap: wrap; flex-direction: row; justify-content: space-around;" />
+    </ui:ScrollView>
+    <ui:Button name="add-button" text="Add" />
+</ui:UXML>

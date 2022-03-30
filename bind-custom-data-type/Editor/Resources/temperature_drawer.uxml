@@ -1,0 +1,12 @@
+<UXML xmlns="UnityEngine.UIElements" xmlns:ue="UnityEditor.UIElements"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="UnityEditor.UIElements file:///Users/antoine.lassauzay/UnityProjects/DataBindingProject/UIElementsSchema/UnityEditor.UIElements.xsd">
+    <VisualElement class="unity-base-field">
+        <Label class="unity-base-field__label"/>
+        <VisualElement class="unity-base-field__input" style="flex-direction:row">
+            <ue:DoubleField binding-path="value"/>
+            <ue:EnumField binding-path="unit"/>
+            <Button text="Convert" />
+        </VisualElement>
+    </VisualElement>
+</UXML>

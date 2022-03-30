@@ -1,0 +1,12 @@
+<UXML xmlns="UnityEngine.UIElements" xmlns:ue="UnityEditor.UIElements">
+    <Style src="tank_inspector_styles.uss"/>
+    <VisualElement name="row" class="container">
+        <Label text="Tank Script - Custom Inspector" />
+        <ue:PropertyField binding-path="tankName" name="tank-name-field" />
+        <ue:PropertyField binding-path="tankSize" name="tank-size-field" />
+        <BindableElement binding-path="health">
+            <ue:PropertyField binding-path="armor"/>
+            <ue:PropertyField binding-path="life"/>
+        </BindableElement>
+    </VisualElement>
+</UXML>
