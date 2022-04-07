@@ -1,4 +1,5 @@
 <UXML xmlns="UnityEngine.UIElements" xmlns:ue="UnityEditor.UIElements">
+    <Style src="tank_inspector_styles.uss" />
     <VisualElement name="row" class="container">
         <Label text="Tank Script - Custom Inspector" />
         <ue:PropertyField binding-path="tankName" name="tank-name-field" />
