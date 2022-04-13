@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="align-items: center;">
+        <MyUILibrary.RadialProgress progress="87.1" style="width: 100px; height: 100px;" />
+    </ui:VisualElement>
+</ui:UXML>
