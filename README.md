@@ -19,10 +19,10 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 
 ## Basic binding examples
 
-- [Create a binding with C#](https://docs.unity3d.com/Documentation/Manual/UIE-create-a-binding-csharp.html)
+- [Bind with binding path in C# script](https://docs.unity3d.com/Documentation/Manual/UIE-create-a-binding-csharp.html)
 - [Bind without the binding path](https://docs.unity3d.com/Documentation/Manual/UIE-bind-without-bindpath.html)
 - [Bind with UXML and C#](https://docs.unity3d.com/Documentation/Manual/UIE-create-a-binding-uxml-bind.html)
-- [Create a binding inspector](https://docs.unity3d.com/Documentation/Manual/UIE-create-a-binding-uxml-inspector.html)
+- [Create a binding with the Inspector](https://docs.unity3d.com/Documentation/Manual/UIE-create-a-binding-uxml-inspector.html)
 - [Bind to nested properties](https://docs.unity3d.com/Documentation/Manual/UIE-bind-to-nested-properties.html)
 - [Bind to a UXML template](https://docs.unity3d.com/Documentation/Manual/UIE-bind-uxml-template.html)
 - [Receive callbacks when a bound property changes](https://docs.unity3d.com/Documentation/Manual/UIE-create-a-binding-callback.html)
@@ -30,7 +30,7 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 
 ## Advanced binding examples
 
-- [Bind to a list](https://docs.unity3d.com/Documentation/Manual/UIE-bind-to-list.html)
-- [Bind to a list without listview](https://docs.unity3d.com/Documentation/Manual/UIE-bind-to-list-without-listview.html)
-- [Bind a custom element](https://docs.unity3d.com/Documentation/Manual/UIE-bind-custom-control.html)
-- [Bind to a custom data type](https://docs.unity3d.com/Documentation/Manual/UIE-bind-to-custom-data-type.html)
+- [Bind to a list with ListView](https://docs.unity3d.com/Documentation/Manual/UIE-bind-to-list.html)
+- [Bind to a list without ListView](https://docs.unity3d.com/Documentation/Manual/UIE-bind-to-list-without-listview.html)
+- [Bind a custom control](https://docs.unity3d.com/Documentation/Manual/UIE-bind-custom-control.html)
+- [Bind a custom control to custom data type](https://docs.unity3d.com/Documentation/Manual/UIE-bind-to-custom-data-type.html)
