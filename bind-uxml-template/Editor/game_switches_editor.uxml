@@ -1,0 +1,6 @@
+<UXML xmlns="UnityEngine.UIElements" xmlns:ue="UnityEditor.UIElements">
+    <Template name="switch" src="../game_switch.uxml"/>
+    <Instance template="switch" binding-path="useLocalServer" />
+    <Instance template="switch" binding-path="showDebugMenu" />
+    <Instance template="switch" binding-path="showFPSCounter" />
+</UXML>
