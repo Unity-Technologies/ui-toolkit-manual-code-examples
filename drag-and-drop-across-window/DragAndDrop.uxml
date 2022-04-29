@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="DragAndDrop.uss" />
+    <ui:VisualElement class="background">
+        <ui:VisualElement class="header">
+            <ui:Label text="Drag And Drop Sample" display-tooltip-when-elided="true" class="header__label" />
+        </ui:VisualElement>
+        <ui:VisualElement class="drop-area">
+            <ui:Label text="Drag an asset here..." display-tooltip-when-elided="true" class="drop-area__label" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

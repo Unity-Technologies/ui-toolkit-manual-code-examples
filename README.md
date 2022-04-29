@@ -6,6 +6,7 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 
 - [Simple UI Toolkit workflow](https://docs.unity3d.com/Documentation/Manual/UIE-simple-ui-toolkit-workflow.html)
 - [Create a drag-and-drop UI inside a custom Editor window](https://docs.unity3d.com/Documentation/Manual/UIE-create-drag-and-drop-ui.html)
+- [Create a drag-and-drop UI to drag between Editor windows](https://docs.unity3d.com/Documentation/Manual/UIE-drag-across-windows.html)
 - [Create a tabbed menu for runtime](https://docs.unity3d.com/Documentation/Manual/UIE-create-tabbed-menu-for-runtime.html)
 - [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
 - [Create a transition in a custom Editor window](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-example.html)

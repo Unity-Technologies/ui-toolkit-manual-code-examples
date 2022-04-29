@@ -1,0 +1,67 @@
+.background {
+    flex-grow: 1;
+    background-color: rgba(30, 30, 30, 255);
+}
+
+.header {
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(112, 128, 144, 255);
+    border-left-color: rgba(211, 211, 211, 255);
+    border-right-color: rgba(211, 211, 211, 255);
+    border-top-color: rgba(211, 211, 211, 255);
+    border-bottom-color: rgba(211, 211, 211, 255);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.header__label {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 255);
+}
+
+.drop-area {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(112, 128, 144, 255);
+    border-left-color: rgba(211, 211, 211, 255);
+    border-right-color: rgba(211, 211, 211, 255);
+    border-top-color: rgba(211, 211, 211, 255);
+    border-bottom-color: rgba(211, 211, 211, 255);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.drop-area--dropping {
+    opacity: 0.4;
+    background-color: rgba(0, 100, 0, 255);
+}
+
+.drop-area__label {
+    -unity-font-style: italic;
+    color: rgba(255, 255, 255, 255);
+}
