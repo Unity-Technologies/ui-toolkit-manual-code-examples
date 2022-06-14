@@ -38,4 +38,4 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 
 ## UXML element examples
 
-- [ListView](https://docs.unity3d.com/Documentation/Manual/UIE-uxml-element-ListView.html)
+- [ListView](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-uxml-element-ListView.html)
