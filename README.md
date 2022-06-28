@@ -39,3 +39,5 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 ## UXML element examples
 
 - [ListView](https://docs.unity3d.com/Documentation/Manual/UIE-uxml-element-ListView.html)
+- [Toggle](https://docs.unity3d.com/Manual/UIE-uxml-element-Toggle.html)
+
