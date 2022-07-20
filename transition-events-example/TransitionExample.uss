@@ -1,0 +1,46 @@
+.click-me {
+    width: 250px;
+    height: 50px;
+    font-size: 40px;
+    -unity-font-style: bold-and-italic;
+    margin: 30px;
+}
+
+.color-changer {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    border-width: 10px;
+    border-radius: 75px;
+    background-color: rgb(0, 31, 138);
+    transition: background-color 3s ease-in-out 1s;
+}
+
+.main-container {
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color: rgb(60, 60, 60);
+}
+
+.label-section {
+    margin: 10px;
+    border-width: 2px;
+    width: 95%;
+    align-items: center;
+}
+
+.label-line {
+    flex-direction: row;
+    margin: 5px;
+    flex-grow: 1;
+    align-items: center;
+    width: 90%;
+    height: 25px;
+    font-size: 14px;
+    padding: 0;
+}
+
+.color-transition {
+    background-color: rgb(177, 221, 111);
+}

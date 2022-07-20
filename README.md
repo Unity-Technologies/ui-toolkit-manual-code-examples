@@ -2,16 +2,19 @@
 
 This repo includes the code examples for the following Unity UI Toolkit docs:
 
-## Custom Editor and runtime
+## Editor UI examples
 
 - [Simple UI Toolkit workflow](https://docs.unity3d.com/Documentation/Manual/UIE-simple-ui-toolkit-workflow.html)
 - [Create a drag-and-drop UI inside a custom Editor window](https://docs.unity3d.com/Documentation/Manual/UIE-create-drag-and-drop-ui.html)
 - [Create a drag-and-drop UI to drag between Editor windows](https://docs.unity3d.com/Documentation/Manual/UIE-drag-across-windows.html)
-- [Create a tabbed menu for runtime](https://docs.unity3d.com/Documentation/Manual/UIE-create-tabbed-menu-for-runtime.html)
 - [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
 - [Create a transition in a custom Editor window](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-example.html)
 
-## Custom controls
+# Runtime UI examples
+
+- [Create a tabbed menu for runtime](https://docs.unity3d.com/Documentation/Manual/UIE-create-tabbed-menu-for-runtime.html)
+
+## Custom controls examples
 
 - [Create a slide toggle custom control](https://docs.unity3d.com/Documentation/Manual/UIE-slide-toggle.html)
 - [Create a radial progress indicator](https://docs.unity3d.com/Documentation/Manual/UIE-radial-progress.html)
@@ -41,3 +44,6 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 - [ListView](https://docs.unity3d.com/Documentation/Manual/UIE-uxml-element-ListView.html)
 - [Toggle](https://docs.unity3d.com/Manual/UIE-uxml-element-Toggle.html)
 
+## Events examples
+
+- [Transition events](https://docs.unity3d.com/Manual/UIE-Transition-Events.html)

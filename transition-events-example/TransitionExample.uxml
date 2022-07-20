@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+        xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements"
+        noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="TransitionExample.uss"/>
+    <ui:VisualElement class="main-container">
+        <ui:Button text="Click Me!" class="click-me"/>
+        <ui:VisualElement class="color-changer"/>
+        <ui:VisualElement class="label-section">
+            <ui:VisualElement class="label-line">
+                <ui:Label text="Latest event(s) :  "/>
+                <ui:Label name="eventLabel"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="label-line">
+                <ui:Label text="Time since last event :  "/>
+                <ui:Label name="timeLabel"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
