@@ -10,7 +10,7 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 - [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
 - [Create a transition in a custom Editor window](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-example.html)
 
-# Runtime UI examples
+## Runtime UI examples
 
 - [Create a tabbed menu for runtime](https://docs.unity3d.com/Documentation/Manual/UIE-create-tabbed-menu-for-runtime.html)
 
