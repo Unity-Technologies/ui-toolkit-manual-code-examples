@@ -1,0 +1,71 @@
+#background {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(115, 37, 38);
+}
+
+#main-container {
+    flex-direction: row;
+    height: 350px;
+}
+
+#character-list {
+    width: 230px;
+    border-color: rgb(49, 26, 17);
+    border-width: 4px;
+    background-color: rgb(110, 57, 37);
+    border-radius: 15px;
+    margin-right: 6px;
+}
+
+#character-name {
+    -unity-font-style: bold;
+    font-size: 18px;
+}
+
+#CharacterClass {
+    margin-top: 2px;
+    margin-bottom: 8px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#select-char-button {
+    width: 150px;
+    border-color: rgb(49, 26, 17);
+    background-color: rgb(255, 133, 84);
+    border-width: 2px;
+}
+
+#right-container{
+    justify-content: space-between; 
+    align-items: flex-end;
+}
+
+#details-container{
+    align-items: center; 
+    background-color: rgb(170, 89, 57); 
+    border-width: 4px; 
+    border-color: rgb(49, 26, 17);
+    border-radius: 15px;
+    width: 252px; 
+    justify-content: center; 
+    padding: 8px;
+    height: 163px;
+}
+
+#details{
+    border-color: rgb(49, 26, 17); 
+    border-width: 2px; 
+    height: 120px; 
+    width: 120px; 
+    border-radius: 13px; 
+    padding: 4px;
+    background-color: rgb(255, 133, 84);
+}
+
+#character-portrait{
+    flex-grow: 1; 
+    -unity-background-scale-mode: scale-to-fit;
+}

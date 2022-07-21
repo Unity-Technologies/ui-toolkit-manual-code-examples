@@ -1,0 +1,16 @@
+#list-entry {
+    height: 41px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 10px;
+    background-color: rgb(170, 89, 57);
+    border-color: rgb(49, 26, 17);
+    border-width: 2px;
+    border-radius: 15px;
+}
+
+#character-name {
+    -unity-font-style: bold;
+    font-size: 18px;
+    color: rgb(49, 26, 17);
+}

@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="MainView.uss" />
+    <ui:VisualElement name="background">
+        <ui:VisualElement name="main-container">
+            <ui:ListView focusable="true" name="character-list" />
+            <ui:VisualElement name="right-container">
+                <ui:VisualElement name="details-container">
+                    <ui:VisualElement name="details">
+                        <ui:VisualElement name="character-portrait" />
+                    </ui:VisualElement>
+                    <ui:Label text="Label" name="character-name" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="character-class" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
