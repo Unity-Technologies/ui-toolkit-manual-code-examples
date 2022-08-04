@@ -1,0 +1,20 @@
+#yoyo-label{
+    transition-duration: 3s;
+}
+.text-style {
+    font-size: 20px;
+    flex-grow: 0;
+    margin: 20px; 
+}
+.enlarge-scale-a2b{
+    scale: 1.5 1.5;
+    transition-duration: 3s;
+}
+.enlarge-scale-yoyo{
+    scale: 1.5 1.5;
+}
+#container{
+    flex-grow:1;
+    justify-content: space-around;
+    align-items: center;
+}

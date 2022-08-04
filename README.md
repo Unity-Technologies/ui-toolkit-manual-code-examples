@@ -4,16 +4,12 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 
 ## Editor UI examples
 
-- [Simple UI Toolkit workflow](https://docs.unity3d.com/Documentation/Manual/UIE-simple-ui-toolkit-workflow.html)
-- [Create a drag-and-drop UI inside a custom Editor window](https://docs.unity3d.com/Documentation/Manual/UIE-create-drag-and-drop-ui.html)
-- [Create a drag-and-drop UI to drag between Editor windows](https://docs.unity3d.com/Documentation/Manual/UIE-drag-across-windows.html)
-- [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
-- [Create a transition in a custom Editor window](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-example.html)
+- [Get started with UI Toolkit](https://docs.unity3d.com/Documentation/Manual/UIE-simple-ui-toolkit-workflow.html)
 
-## Runtime UI examples
+
+## Tabbed menu examples
 
 - [Create a tabbed menu for runtime](https://docs.unity3d.com/Documentation/Manual/UIE-create-tabbed-menu-for-runtime.html)
-- [Create a list view runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-HowTo-CreateRuntimeUI.html)
 
 ## Custom controls examples
 
@@ -42,9 +38,23 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 
 ## UXML element examples
 
-- [ListView](https://docs.unity3d.com/Documentation/Manual/UIE-uxml-element-ListView.html)
 - [Toggle](https://docs.unity3d.com/Manual/UIE-uxml-element-Toggle.html)
+- [ListView](https://docs.unity3d.com/Manual/UIE-uxml-element-ListView.html)
 
-## Events examples
 
+## Transition examples
+
+- [Create a transition in a custom Editor window](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-example.html)
 - [Transition events](https://docs.unity3d.com/Manual/UIE-Transition-Events.html)
+- [Create looping transitions](https://docs.unity3d.com/2023.1/Documentation/Manual/UIE-transition-event-loop-example.html)
+
+# List and tree view examples
+
+- [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
+- [Create a list view runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-HowTo-CreateRuntimeUI.html)
+
+# Drag-and-drop UI examples
+
+- [Create a drag-and-drop UI inside a custom Editor window](https://docs.unity3d.com/Documentation/Manual/UIE-create-drag-and-drop-ui.html)
+- [Create a drag-and-drop UI to drag between Editor windows](https://docs.unity3d.com/Documentation/Manual/UIE-drag-across-windows.html)
+

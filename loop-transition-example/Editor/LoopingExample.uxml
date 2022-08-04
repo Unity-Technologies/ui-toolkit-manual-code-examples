@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" 
+             xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" 
+             noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" 
+             editor-extension-mode="False">
+    <Style src="LoopingExample.uss" />
+    <ui:VisualElement name="container">
+        <ui:VisualElement>
+                <ui:Label text="Yo-yo Transition" name="yoyo-label" class="text-style" />
+        </ui:VisualElement>
+        <ui:VisualElement>
+                <ui:Label text="A-to-B Transition" name="a2b-label" class="text-style"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
