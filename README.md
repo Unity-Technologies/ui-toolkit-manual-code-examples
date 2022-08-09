@@ -1,6 +1,8 @@
 # UI Toolkit Manual Code Examples
 
-This repo includes the code examples for the following Unity UI Toolkit docs:
+This repo includes the code examples for Unity's UI Toolkit documentation. The code examples in this repo don't work by themselves and the repo doesn't include any project files. 
+
+You must follow the steps in the UI Toolkit user manual to create the examples. You can create the examples with any Unity template and with the sample scene. Most of the examples were created with Editor UI for demo purposes, but they will work for runtime UI.
 
 ## Editor UI examples
 
@@ -46,7 +48,7 @@ This repo includes the code examples for the following Unity UI Toolkit docs:
 
 - [Create a transition in a custom Editor window](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-example.html)
 - [Transition events](https://docs.unity3d.com/Manual/UIE-Transition-Events.html)
-- [Create looping transitions](https://docs.unity3d.com/2023.1/Documentation/Manual/UIE-transition-event-loop-example.html)
+- [Create looping transitions](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-event-loop-example.html)
 
 # List and tree view examples
 
