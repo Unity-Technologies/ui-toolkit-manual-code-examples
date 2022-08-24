@@ -8,6 +8,10 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 
 - [Get started with UI Toolkit](https://docs.unity3d.com/Documentation/Manual/UIE-simple-ui-toolkit-workflow.html)
 
+## Runtime UI examples
+
+- [Get started with runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-get-started-with-runtime-ui.html)
+
 
 ## Tabbed menu examples
 
