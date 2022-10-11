@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="PopupExample.uss" />
+    <ui:Toggle label="Toggle 1" name="Toggle1"/>
+    <ui:Toggle label="Toggle 2" />
+    <ui:Toggle label="Toggle 3" />
+</ui:UXML>
