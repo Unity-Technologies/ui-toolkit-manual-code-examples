@@ -54,13 +54,20 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 - [Transition events](https://docs.unity3d.com/Manual/UIE-Transition-Events.html)
 - [Create looping transitions](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-event-loop-example.html)
 
-# List and tree view examples
+## List and tree view examples
 
 - [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
 - [Create a list view runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-HowTo-CreateRuntimeUI.html)
 
-# Drag-and-drop UI examples
+## Drag-and-drop UI examples
 
 - [Create a drag-and-drop UI inside a custom Editor window](https://docs.unity3d.com/Documentation/Manual/UIE-create-drag-and-drop-ui.html)
 - [Create a drag-and-drop UI to drag between Editor windows](https://docs.unity3d.com/Documentation/Manual/UIE-drag-across-windows.html)
+
+## Create a pop-up window example
+
+- [Create a pop-up windows](https://docs.unity3d.com/Manual/UIE-create-a-popup-window.html)
+
+
+
 
