@@ -3,5 +3,6 @@
         <ui:Label text="This is a Label" display-tooltip-when-elided="true" />
         <ui:Button text="This is a Button" display-tooltip-when-elided="true" name="button" />
         <ui:Toggle label="Display the counter?" name="toggle" />
+        <ui:TextField picking-mode="Ignore" label="Text Field" value="filler text" text="filler text" name="input-message" />
     </ui:VisualElement>
 </ui:UXML>

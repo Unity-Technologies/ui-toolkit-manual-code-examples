@@ -8,13 +8,19 @@ public class SimpleRuntimeUI : MonoBehaviour
 
     private int _clickCount;
 
+    //Add logic that interacts with the UI controls in the `OnEnable` methods
     private void OnEnable()
     {
+        // The UXML is already instantiated by the UIDocument component
         var uiDocument = GetComponent<UIDocument>();
-        _button = uiDocument.rootVisualElement.Q<Button>();
-        _toggle = uiDocument.rootVisualElement.Q<Toggle>();
+
+        _button = uiDocument.rootVisualElement.Q("button");
+        _toggle = uiDocument.rootVisualElement.Q("toggle");
 
         _button.RegisterCallback<ClickEvent>(PrintClickMessage);
+
+        var _inputFields = uiDocument.rootVisualElement.Q("input-message");
+        _inputFields.RegisterCallback<ChangeEvent<string>>(InputMessage);
     }
 
     private void OnDisable()
@@ -26,9 +32,12 @@ public class SimpleRuntimeUI : MonoBehaviour
     {
         ++_clickCount;
 
-        var button = evt.currentTarget as Button;
+        Debug.Log($"{"button"} was clicked!" +
+                (_toggle.value ? " Count: " + _clickCount : ""));
+    }
 
-        Debug.Log($"{button.name} was clicked!" +
-                  (_toggle.value ? " Count: " + _clickCount : ""));
+    public static void InputMessage(ChangeEvent<string> evt)
+    {
+        Debug.Log($"{evt.newValue} -> {evt.target}");
     }
 }
