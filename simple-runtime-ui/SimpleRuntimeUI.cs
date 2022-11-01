@@ -14,8 +14,8 @@ public class SimpleRuntimeUI : MonoBehaviour
         // The UXML is already instantiated by the UIDocument component
         var uiDocument = GetComponent<UIDocument>();
 
-        _button = uiDocument.rootVisualElement.Q("button");
-        _toggle = uiDocument.rootVisualElement.Q("toggle");
+        _button = uiDocument.rootVisualElement.Q("button") as Button;
+        _toggle = uiDocument.rootVisualElement.Q("toggle") as Toggle;
 
         _button.RegisterCallback<ClickEvent>(PrintClickMessage);
 
