@@ -7,6 +7,7 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 ## Editor UI examples
 
 - [Get started with UI Toolkit](https://docs.unity3d.com/Documentation/Manual/UIE-simple-ui-toolkit-workflow.html)
+- [Relative and absolute positioning C# example](https://docs.unity3d.com/Manual/UIE-relative-absolute-positioning-example.html)
 
 ## Runtime UI examples
 
