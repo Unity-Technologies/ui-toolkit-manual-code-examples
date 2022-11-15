@@ -14,10 +14,6 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 - [Get started with runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-get-started-with-runtime-ui.html)
 
 
-## Tabbed menu examples
-
-- [Create a tabbed menu for runtime](https://docs.unity3d.com/Documentation/Manual/UIE-create-tabbed-menu-for-runtime.html)
-
 ## Custom controls examples
 
 - [Create a slide toggle custom control](https://docs.unity3d.com/Documentation/Manual/UIE-slide-toggle.html)
@@ -43,11 +39,15 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 - [Bind a custom control](https://docs.unity3d.com/Documentation/Manual/UIE-bind-custom-control.html)
 - [Bind a custom control to custom data type](https://docs.unity3d.com/Documentation/Manual/UIE-bind-to-custom-data-type.html)
 
-## UXML element examples
+## UI controls examples
 
 - [Toggle](https://docs.unity3d.com/Manual/UIE-uxml-element-Toggle.html)
 - [ListView](https://docs.unity3d.com/Manual/UIE-uxml-element-ListView.html)
-
+- [Wrap content inside a scroll view](https://docs.unity3d.com/Manual/UIE-wrap-content-inside-scrollview.html)
+- [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
+- [Create a list view runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-HowTo-CreateRuntimeUI.html)
+- [Create a pop-up windows](https://docs.unity3d.com/Manual/UIE-create-a-popup-window.html)
+- [Create a tabbed menu for runtime](https://docs.unity3d.com/Documentation/Manual/UIE-create-tabbed-menu-for-runtime.html)
 
 ## Transition examples
 
@@ -55,19 +55,11 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 - [Transition events](https://docs.unity3d.com/Manual/UIE-Transition-Events.html)
 - [Create looping transitions](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-transition-event-loop-example.html)
 
-## List and tree view examples
-
-- [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
-- [Create a list view runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-HowTo-CreateRuntimeUI.html)
 
 ## Drag-and-drop UI examples
 
 - [Create a drag-and-drop UI inside a custom Editor window](https://docs.unity3d.com/Documentation/Manual/UIE-create-drag-and-drop-ui.html)
 - [Create a drag-and-drop UI to drag between Editor windows](https://docs.unity3d.com/Documentation/Manual/UIE-drag-across-windows.html)
-
-## Create a pop-up window example
-
-- [Create a pop-up windows](https://docs.unity3d.com/Manual/UIE-create-a-popup-window.html)
 
 
 
