@@ -20,6 +20,7 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 - [Create a radial progress indicator](https://docs.unity3d.com/Documentation/Manual/UIE-radial-progress.html)
 - [Create a bindable custom control](https://docs.unity3d.com/Documentation/Manual/UIE-create-bindable-custom-control.html)
 - [Create a custom style for a custom control](https://docs.unity3d.com/Documentation/Manual/UIE-create-custom-style-custom-control.html)
+- [Create a custom control with two attributes](https://docs.unity3d.com/Manual/UIB-structuring-ui-custom-elements.html)
 
 ## Basic binding examples
 
@@ -41,10 +42,10 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 
 ## UI controls examples
 
-- [Toggle](https://docs.unity3d.com/Manual/UIE-uxml-element-Toggle.html)
-- [ListView](https://docs.unity3d.com/Manual/UIE-uxml-element-ListView.html)
+- [Use Toggle to create a conditional UI](https://docs.unity3d.com/Documentation/Manual/UIE-create-a-conditional-ui.html)
 - [Wrap content inside a scroll view](https://docs.unity3d.com/Manual/UIE-wrap-content-inside-scrollview.html)
 - [Create list and tree views](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-ListView-TreeView.html)
+- [Create a complex list view](https://docs.unity3d.com/2022.1/Documentation/Manual/UIE-create-list-view-complex.html)
 - [Create a list view runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-HowTo-CreateRuntimeUI.html)
 - [Create a pop-up windows](https://docs.unity3d.com/Manual/UIE-create-a-popup-window.html)
 - [Create a tabbed menu for runtime](https://docs.unity3d.com/Documentation/Manual/UIE-create-tabbed-menu-for-runtime.html)
