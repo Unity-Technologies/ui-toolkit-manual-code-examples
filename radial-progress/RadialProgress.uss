@@ -10,6 +10,8 @@
         margin-bottom: 5px;
         flex-direction: row;
         justify-content: center;
+        width: 100px; 
+        height: 100px;
     }
 
     .radial-progress__label {
