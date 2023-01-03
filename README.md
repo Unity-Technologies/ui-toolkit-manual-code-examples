@@ -62,6 +62,9 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 - [Create a drag-and-drop UI inside a custom Editor window](https://docs.unity3d.com/Documentation/Manual/UIE-create-drag-and-drop-ui.html)
 - [Create a drag-and-drop UI to drag between Editor windows](https://docs.unity3d.com/Documentation/Manual/UIE-drag-across-windows.html)
 
+## Vector UI examples
 
+- [Create a pie chart in the Editor and runtime UI](https://docs.unity3d.com/2022.2/Documentation/Manual/UIE-pie-chart.html)
+- [Use Vector API to create a radial progress indicator](https://docs.unity3d.com/2022.2/Documentation/Manual/UIE-radial-progress-use-vector-api.html)
 
 
