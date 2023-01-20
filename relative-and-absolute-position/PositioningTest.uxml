@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="PositioningTest.uss" />
+    <ui:VisualElement>
+        <ui:VisualElement class="vs" />
+        <ui:VisualElement class="vs" />
+        <ui:Label text="Relative\nPos\n25, 0" name="relative" />
+        <ui:VisualElement class="vs" />
+        <ui:VisualElement class="vs" />
+        <ui:Label text="Absolute\nPos\n25, 25" name="absolutePositionElement" />
+    </ui:VisualElement>
+</ui:UXML>

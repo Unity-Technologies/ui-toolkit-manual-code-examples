@@ -1,0 +1,24 @@
+.vs {
+    height: 70px;
+    width: 70px;
+    margin-bottom: 2px;
+    background-color: gray;
+}
+
+#relative{
+    width: 70px; 
+    height: 70px; 
+    background-color: purple; 
+    left: 25px; 
+    margin-bottom: 2px;
+    position:relative;
+}
+
+#absolutePositionElement{
+    left: 25px; 
+    top: 25px; 
+    width: 70px; 
+    height: 70px; 
+    background-color: black;
+    position: absolute;
+}
