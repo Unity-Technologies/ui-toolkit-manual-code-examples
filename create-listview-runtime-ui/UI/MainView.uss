@@ -31,13 +31,6 @@
     padding-bottom: 0;
 }
 
-#select-char-button {
-    width: 150px;
-    border-color: rgb(49, 26, 17);
-    background-color: rgb(255, 133, 84);
-    border-width: 2px;
-}
-
 #right-container{
     justify-content: space-between; 
     align-items: flex-end;
