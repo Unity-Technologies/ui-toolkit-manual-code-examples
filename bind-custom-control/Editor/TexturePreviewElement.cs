@@ -6,11 +6,9 @@ using Object = UnityEngine.Object;
 
 namespace UIToolkitExamples
 {
-    public class TexturePreviewElement : BindableElement, INotifyValueChanged<Object>
+    [UxmlElement]
+    public partial class TexturePreviewElement : BindableElement, INotifyValueChanged<Object>
     {
-        public new class UxmlTraits : BindableElement.UxmlTraits { }
-        public new class UxmlFactory : UxmlFactory<TexturePreviewElement, UxmlTraits> { }
-
         public static readonly string ussClassName = "texture-preview-element";
 
         Image m_Preview;

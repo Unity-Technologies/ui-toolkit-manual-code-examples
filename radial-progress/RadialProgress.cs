@@ -7,29 +7,9 @@ namespace MyUILibrary
     /// <summary>
     /// An element that displays progress inside a partially filled circle
     /// </summary>
-    public class RadialProgress : VisualElement
+    [UxmlElement]
+    public partial class RadialProgress : VisualElement
     {
-        public new class UxmlTraits : VisualElement.UxmlTraits
-        {
-            // The progress property is exposed to UXML.
-            UxmlFloatAttributeDescription m_ProgressAttribute = new UxmlFloatAttributeDescription()
-            {
-                name = "progress"
-            };
-
-            // The Init method is used to assign to the C# progress property from the value of the progress UXML
-            // attribute.
-            public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
-            {
-                base.Init(ve, bag, cc);
-
-                (ve as RadialProgress).progress = m_ProgressAttribute.GetValueFromBag(bag, cc);
-            }
-        }
-
-        // A Factory class is needed to expose this control to UXML.
-        public new class UxmlFactory : UxmlFactory<RadialProgress, UxmlTraits> { }
-
         // These are USS class names for the control overall and the label.
         public static readonly string ussClassName = "radial-progress";
         public static readonly string ussLabelClassName = "radial-progress__label";
@@ -54,6 +34,7 @@ namespace MyUILibrary
         /// <summary>
         /// A value between 0 and 100
         /// </summary>
+        [UxmlAttribute]
         public float progress
         {
             // The progress property is exposed in C#.

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PieChart : VisualElement
+[UxmlElement]
+public partial class PieChart : VisualElement
 {
     float m_Radius = 100.0f;
     float m_Value = 40.0f;

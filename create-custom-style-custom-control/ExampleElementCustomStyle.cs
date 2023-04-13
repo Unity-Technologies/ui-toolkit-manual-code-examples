@@ -3,14 +3,9 @@ using UnityEngine.UIElements;
 
 namespace UIToolkitExamples
 {
-    public class ExampleElementCustomStyle : VisualElement
+    [UxmlElement]
+    public partial class ExampleElementCustomStyle : VisualElement
     {
-        // Factory class, required to expose this custom control to UXML
-        public new class UxmlFactory : UxmlFactory<ExampleElementCustomStyle, UxmlTraits> { }
-
-        // Traits class
-        public new class UxmlTraits : VisualElement.UxmlTraits { }
-
         // Use CustomStyleProperty<T> to fetch custom style properties from USS
         static readonly CustomStyleProperty<Color> S_GradientFrom = new CustomStyleProperty<Color>("--gradient-from");
         static readonly CustomStyleProperty<Color> S_GradientTo = new CustomStyleProperty<Color>("--gradient-to");

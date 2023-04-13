@@ -4,12 +4,9 @@ using UnityEngine.UIElements;
 namespace MyUILibrary
 {
     // Derives from BaseField<bool> base class. Represents a container for its input part.
-    public class SlideToggle : BaseField<bool>
+    [UxmlElement]
+    public partial class SlideToggle : BaseField<bool>
     {
-        public new class UxmlFactory : UxmlFactory<SlideToggle, UxmlTraits> { }
-
-        public new class UxmlTraits : BaseFieldTraits<bool, UxmlBoolAttributeDescription> { }
-
         // In the spirit of the BEM standard, the SlideToggle has its own block class and two element classes. It also
         // has a class that represents the enabled state of the toggle.
         public static readonly new string ussClassName = "slide-toggle";
@@ -25,7 +22,7 @@ namespace MyUILibrary
         public SlideToggle() : this(null) { }
 
         // This constructor allows users to set the contents of the label.
-        public SlideToggle(string label) : base(label, new())
+        public SlideToggle(string label) : base(label, null)
         {
             // Style the control overall.
             AddToClassList(ussClassName);
@@ -90,7 +87,7 @@ namespace MyUILibrary
             value = !value;
         }
 
-        // Because ToggleValue() sets the value property, the BaseField class fires a ChangeEvent. This results in a
+        // Because ToggleValue() sets the value property, the BaseField class dispatches a ChangeEvent. This results in a
         // call to SetValueWithoutNotify(). This example uses it to style the toggle based on whether it's currently
         // enabled.
         public override void SetValueWithoutNotify(bool newValue)
