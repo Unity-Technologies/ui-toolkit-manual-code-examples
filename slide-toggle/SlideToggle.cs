@@ -30,7 +30,6 @@ namespace MyUILibrary
             // Get the BaseField's visual input element and use it as the background of the slide.
             m_Input = this.Q(className: BaseField<bool>.inputUssClassName);
             m_Input.AddToClassList(inputUssClassName);
-            Add(m_Input);
 
             // Create a "knob" child element for the background to represent the actual slide of the toggle.
             m_Knob = new();
