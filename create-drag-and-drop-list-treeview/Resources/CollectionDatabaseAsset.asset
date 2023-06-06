@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee121c5f20af14b20a310e46476c1e0d, type: 3}
+  m_Name: CollectionDatabaseAsset
+  m_EditorClassIdentifier: 
+  initialLobbyList:
+  - name: BigPotato
+    number: 23
+    icon: {fileID: 4154780841294389669, guid: 7451f8883cd0043f8aa6c0708b221658, type: 3}
+  - name: SmallApple
+    number: 72
+    icon: {fileID: -6090568113533005507, guid: 7451f8883cd0043f8aa6c0708b221658, type: 3}
+  - name: MediumPineapple
+    number: 48
+    icon: {fileID: 4584671053970592468, guid: 7451f8883cd0043f8aa6c0708b221658, type: 3}
+  - name: PrettyUnicorn
+    number: 52
+    icon: {fileID: 2800000, guid: 7b86a539750e1a44ca7ec5b7f690babd, type: 3}
+  - name: UglyDuck
+    number: 19
+    icon: {fileID: 2800000, guid: 8dfc24821a9794200b8d54e906e4b6da, type: 3}
+  - name: PassiveMouse
+    number: 86
+    icon: {fileID: 2800000, guid: eddc3b652f54848828296504ee94ec04, type: 3}
+  - name: MasterExploder
+    number: 99
+    icon: {fileID: 2800000, guid: 8174b068fa7b788459b03cec80d0641a, type: 3}

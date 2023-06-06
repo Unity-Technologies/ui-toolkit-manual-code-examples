@@ -1,0 +1,48 @@
+    .team-list {
+        border-color: rgb(164, 164, 164);
+        border-width: 2px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        flex-grow: 1;
+    }
+
+    .section-container {
+        padding: 5px;
+        flex-grow: 1; 
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .unity-list-view__empty-label {
+        display: none;
+    }
+
+    #Container {
+        flex-direction: row; 
+        align-items: center; 
+        padding-left: 6px;
+    }
+
+    #Icon {
+         width: 24px; 
+         height: 24px;
+    }
+
+    #PlayerName {
+        flex-grow: 1; 
+        -unity-text-align: middle-left; 
+        font-size: 14px; 
+        padding-left: 6px;
+    }
+
+    .split-window{
+        min-width: 250px;
+    }
+
+    .main-view{
+        flex-grow: 1; 
+        background-color: rgba(0, 0, 0, 0); 
+        flex-direction: column;
+    }
+    

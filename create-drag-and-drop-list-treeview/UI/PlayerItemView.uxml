@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="main.uss" />
+    <CollectionTests.PlayerItemView name="container">
+        <ui:VisualElement name="Icon" />
+        <ui:Label name="PlayerName"/>
+    </CollectionTests.PlayerItemView>
+</ui:UXML>
+
+

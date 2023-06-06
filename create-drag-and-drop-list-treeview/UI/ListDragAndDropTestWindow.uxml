@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="main.uss" />
+    <ui:VisualElement class="main-view">
+        <ui:Toggle name="Toggle-LobbyOwner" text="Lobby Owner" />
+        <ui:VisualElement class="section-container" >
+            <ui:TwoPaneSplitView fixed-pane-initial-dimension="300">
+                <ui:VisualElement class="split-window" >
+                    <ui:VisualElement name="LobbyContainer" class="section-container" >
+                        <ui:Label tabindex="-1" text="Lobby" display-tooltip-when-elided="true" name="Name-Lobby" />
+                        <ui:ListView name="ListView-Lobby" reorderable="true" selection-type="Multiple" class="team-list" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement class="split-window" >
+                    <ui:VisualElement name="TeamContainer" class="section-container" >
+                        <ui:VisualElement name="BlueTeam" class="section-container" >
+                            <ui:Label tabindex="-1" text="Blue Team" display-tooltip-when-elided="true" name="Name-BlueTeam" />
+                            <ui:MultiColumnListView name="ListView-BlueTeam" reorderable="true" selection-type="Multiple" class="team-list" >
+                                <ui:Columns>
+                                    <ui:Column name="icon" title="Icon" width="50" resizable="false" />
+                                    <ui:Column name="number" title="#" width="40" resizable="false" />
+                                    <ui:Column name="name" stretchable="true" title="Name" />
+                                </ui:Columns>
+                            </ui:MultiColumnListView>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="RedTeam" class="section-container" >
+                            <ui:Label tabindex="-1" text="Red Team" display-tooltip-when-elided="true" name="Name-RedTeam" />
+                            <ui:TreeView name="TreeView-RedTeam" reorderable="true" selection-type="Multiple" class="team-list" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:TwoPaneSplitView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
