@@ -3,10 +3,9 @@ using UnityEngine.UIElements;
 
 namespace CollectionTests
 {
-    public class PlayerItemView : PlayerDataElement
+    [UxmlElement]
+    public partial class PlayerItemView : PlayerDataElement
     {
-        public new class UxmlFactory : UxmlFactory<PlayerItemView> { }
-
         VisualElement m_Icon;
         Label m_Name;
 

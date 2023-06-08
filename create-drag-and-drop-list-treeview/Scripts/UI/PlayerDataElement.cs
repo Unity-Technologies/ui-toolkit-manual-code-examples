@@ -3,7 +3,8 @@ using UnityEngine.UIElements;
 
 namespace CollectionTests
 {
-    public class PlayerDataElement : VisualElement
+    [UxmlElement]
+    public partial class PlayerDataElement : VisualElement
     {
         public PlayerData data { get; private set; }
 
