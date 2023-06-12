@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -28,8 +27,12 @@ namespace CollectionTests
             m_BlueTeamListView = rootVisualElement.Q<MultiColumnListView>("ListView-BlueTeam");
             m_RedTeamTreeView = rootVisualElement.Q<TreeView>("TreeView-RedTeam");
 
-            // Create a copy of the lobby list.
-            m_LobbyItemsSource = collectionDatabase.initialLobbyList.ToList();
+            m_LobbyItemsSource = new List<PlayerData>(); 
+
+            foreach (var item in collectionDatabase.initialLobbyList)
+            {
+                m_LobbyItemsSource.Add(item);
+            }
 
             m_LobbyListView.makeItem = MakeItem;
             m_LobbyListView.bindItem = (e, i) => BindItem(e, i, m_LobbyItemsSource[i]);
@@ -101,7 +104,14 @@ namespace CollectionTests
 
                 var startDragArgs = new StartDragArgs(args.startDragArgs.title, DragVisualMode.Move);
                 startDragArgs.SetGenericData(k_SourceKey, source);
-                startDragArgs.SetGenericData(k_DraggedItemsKey, args.selectedIds.Any() ? args.selectedIds : new List<int> { playerView.id });
+                var hasSelection = false;
+                foreach (var id in args.selectedIds)
+                {
+                    hasSelection = true;
+                    break;
+                }
+
+                startDragArgs.SetGenericData(k_DraggedItemsKey, hasSelection ? args.selectedIds : new List<int> { playerView.id });
                 return startDragArgs;
             }
 
@@ -116,10 +126,19 @@ namespace CollectionTests
 
             DragVisualMode OnHandleDrop(HandleDragAndDropArgs args, BaseVerticalCollectionView destination, bool isLobby = false)
             {
-                if (args.dragAndDropData.unityObjectReferences != null && args.dragAndDropData.unityObjectReferences.Any())
+                if (args.dragAndDropData.unityObjectReferences != null)
                 {
-                    Debug.Log($"That was {string.Join(", ", args.dragAndDropData.unityObjectReferences.Select(o => $"\"{o.name}\""))}");
-                    return DragVisualMode.Move;
+                    var objectsToString = string.Empty;
+                    foreach (var obj in args.dragAndDropData.unityObjectReferences)
+                    {
+                        objectsToString += $"{obj.name}, ";
+                    }
+
+                    if (!string.IsNullOrEmpty(objectsToString))
+                    {
+                        Debug.Log($"That was {objectsToString}");
+                        return DragVisualMode.Move;
+                    }
                 }
 
                 if (args.dragAndDropData.GetGenericData(k_DraggedItemsKey) is not List<int> draggedIds)
@@ -142,7 +161,12 @@ namespace CollectionTests
                 // ********************************************************
 
                 // Gather ids from dragged indices
-                var ids = draggedIds.ToList();
+                var ids = new List<int>();
+
+                foreach (var id in draggedIds)
+                {
+                    ids.Add(id);
+                }
 
                 // Special TreeView case, we need to gather children or selected indices.
                 if (treeViewSource != null)
@@ -195,7 +219,11 @@ namespace CollectionTests
                     throw new ArgumentException("Unhandled source.");
                 }
 
-                destination.SetSelection(ids.Select(id => destination.viewController.GetIndexForId(id)));
+                foreach (var id in ids)
+                {
+                    var index = destination.viewController.GetIndexForId(id);
+                    destination.AddToSelection(index);
+                }
                 source.ClearSelection();
                 destination.RefreshItems();
                 LogTeamSizes();
