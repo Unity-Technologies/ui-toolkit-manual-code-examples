@@ -61,6 +61,7 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 
 - [Create a drag-and-drop UI inside a custom Editor window](https://docs.unity3d.com/Documentation/Manual/UIE-create-drag-and-drop-ui.html)
 - [Create a drag-and-drop UI to drag between Editor windows](https://docs.unity3d.com/Documentation/Manual/UIE-drag-across-windows.html)
+- [Create a drag-and-drop list and tree views between windows](https://docs.unity3d.com/2023.2/Documentation/Manual/UIE-examples.html)
 
 ## Vector UI examples
 
