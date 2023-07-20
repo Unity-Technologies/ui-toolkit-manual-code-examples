@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="CustomBinding.uss" />
+    <ui:VisualElement class="menu-button">
+        <ui:Button text="Bloub">
+            <Bindings>
+                <AddMenuUssClass property="add-menu-button-class" />
+            </Bindings>
+        </ui:Button>
+        <ui:Button text="Bip">
+            <Bindings>
+                <AddMenuUssClass property="add-menu-button-class" />
+            </Bindings>
+        </ui:Button>
+        <ui:Button text="Boop">
+            <Bindings>
+                <AddMenuUssClass property="add-menu-button-class" />
+            </Bindings>
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

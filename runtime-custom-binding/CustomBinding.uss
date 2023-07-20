@@ -1,0 +1,22 @@
+.menu-button {
+    flex-direction: row;
+    height: 64px;
+    align-items: center; 
+    justify-content: center;
+}
+
+.menu-button--first {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-left-width: 2px;
+}
+
+.menu-button--last {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-right-width: 2px;
+}
+
+Button {
+    margin: 0px;
+}
