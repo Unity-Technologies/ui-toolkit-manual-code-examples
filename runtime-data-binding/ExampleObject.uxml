@@ -2,7 +2,7 @@
     <ui:VisualElement data-source="ExampleObject.asset" name="VisualElement" >
         <ui:Vector3Field label="Vec3 Field">
             <Bindings>
-                <ui:DataBinding property="label" data-source-path="vector3Label" binding-mode="ToTarget" />
+                <ui:DataBinding property="label" data-source-path="vector3Label" binding-mode="ToSource" />
                 <ui:DataBinding property="value" data-source-path="vector3Value" />
             </Bindings>
         </ui:Vector3Field>

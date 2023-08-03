@@ -1,5 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
-    <Style src="CustomBinding.uss" />
     <ui:VisualElement class="menu-button">
         <ui:Button text="Bloub">
             <Bindings>
