@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Drag%20and%20Drop/DragAndDropWindow.uss?fileID=7433441132597879392&amp;guid=88e18c4dc407045fca44b634c99898a1&amp;type=3#DragAndDropWindow" />
+    <Style src="DragAndDropWindow.uss" />
     <ui:VisualElement name="slots">
         <ui:VisualElement name="slot_row1" class="slot_row">
             <ui:VisualElement name="slot1" class="slot" />
