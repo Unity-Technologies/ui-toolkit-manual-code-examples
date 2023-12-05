@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <AspectRatio width="4" height="3" style="flex-grow: 1; background-color: yellow;" >
+      <ui:VisualElement style="flex-grow: 1; background-color: green;" />
+    </AspectRatio>    
+</ui:UXML>
