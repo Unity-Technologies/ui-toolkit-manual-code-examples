@@ -62,3 +62,7 @@
     flex-grow: 1; 
     -unity-background-scale-mode: scale-to-fit;
 }
+
+.unity-collection-view__item {
+    justify-content: center;
+}
