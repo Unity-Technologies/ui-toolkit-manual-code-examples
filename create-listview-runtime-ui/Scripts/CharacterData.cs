@@ -1,14 +1,14 @@
-    using UnityEngine;
+using UnityEngine;
 
-    public enum ECharacterClass
-    {
-        Knight, Ranger, Wizard
-    }
+public enum ECharacterClass
+{
+    Knight, Ranger, Wizard
+}
 
-    [CreateAssetMenu]
-    public class CharacterData : ScriptableObject
-    {
-        public string m_CharacterName;
-        public ECharacterClass m_Class;
-        public Sprite m_PortraitImage;
-    }
+[CreateAssetMenu]
+public class CharacterData : ScriptableObject
+{
+    public string CharacterName;
+    public ECharacterClass Class;
+    public Sprite PortraitImage;
+}

@@ -13,6 +13,8 @@ public class CharacterListController
     Label m_CharNameLabel;
     VisualElement m_CharPortrait;
 
+    List<CharacterData> m_AllCharacters;
+
     public void InitializeCharacterList(VisualElement root, VisualTreeAsset listElementTemplate)
     {
         EnumerateAllCharacters();
@@ -31,10 +33,8 @@ public class CharacterListController
         FillCharacterList();
 
         // Register to get a callback when an item is selected
-        m_CharacterList.onSelectionChange += OnCharacterSelected;
+        m_CharacterList.selectionChanged += OnCharacterSelected;
     }
-
-    List<CharacterData> m_AllCharacters;
 
     void EnumerateAllCharacters()
     {
@@ -66,10 +66,11 @@ public class CharacterListController
         // Set up bind function for a specific list entry
         m_CharacterList.bindItem = (item, index) =>
         {
-            (item.userData as CharacterListEntryController).SetCharacterData(m_AllCharacters[index]);
+            (item.userData as CharacterListEntryController)?.SetCharacterData(m_AllCharacters[index]);
         };
 
-        // Set a fixed item height
+        // Set a fixed item height matching the height of the item provided in makeItem. 
+        // For dynamic height, see the virtualizationMethod property.
         m_CharacterList.fixedItemHeight = 45;
 
         // Set the actual item's source list/array
@@ -93,8 +94,8 @@ public class CharacterListController
         }
 
         // Fill in character details
-        m_CharClassLabel.text = selectedCharacter.m_Class.ToString();
-        m_CharNameLabel.text = selectedCharacter.m_CharacterName;
-        m_CharPortrait.style.backgroundImage = new StyleBackground(selectedCharacter.m_PortraitImage);
+        m_CharClassLabel.text = selectedCharacter.Class.ToString();
+        m_CharNameLabel.text = selectedCharacter.CharacterName;
+        m_CharPortrait.style.backgroundImage = new StyleBackground(selectedCharacter.PortraitImage);
     }
 }
