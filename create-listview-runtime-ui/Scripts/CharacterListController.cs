@@ -33,7 +33,7 @@ public class CharacterListController
         FillCharacterList();
 
         // Register to get a callback when an item is selected
-        m_CharacterList.selectionChanged += OnCharacterSelected;
+        m_CharacterList.OnSelectionChange += OnCharacterSelected;
     }
 
     void EnumerateAllCharacters()
