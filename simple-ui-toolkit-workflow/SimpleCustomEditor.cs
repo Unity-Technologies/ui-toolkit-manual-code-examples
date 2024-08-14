@@ -2,17 +2,17 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MyCustomEditor : EditorWindow
+public class SimpleCustomEditor : EditorWindow
 {
     [MenuItem("Window/UI Toolkit/MyCustomEditor")]
     public static void ShowExample()
     {
-        MyCustomEditor wnd = GetWindow<MyCustomEditor>();
+        SimpleCustomEditor wnd = GetWindow<SimpleCustomEditor>();
         wnd.titleContent = new GUIContent("MyCustomEditor");
     }
 
     [SerializeField]
-    private VisualTreeAsset m_UXMLTree;
+    private VisualTreeAsset m_UXMLTree = default;
 
     private int m_ClickCount = 0;
 
@@ -23,7 +23,7 @@ public class MyCustomEditor : EditorWindow
         // Each editor window contains a root VisualElement object
         VisualElement root = rootVisualElement;
 
-        // VisualElements objects can contain other VisualElements following a tree hierarchy.
+        // VisualElements objects can contain other VisualElement following a tree hierarchy.
         Label label = new Label("These controls were created using C# code.");
         root.Add(label);
 
@@ -37,18 +37,19 @@ public class MyCustomEditor : EditorWindow
         toggle.label = "Number?";
         root.Add(toggle);
 
-        // Import UXML
-        var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/MyCustomEditor.uxml");
-        VisualElement labelFromUXML = visualTree.Instantiate();
-        root.Add(labelFromUXML);
-
+        // Instantiate UXML created automatically which is set as the default VisualTreeAsset.
         root.Add(m_UXMLTree.Instantiate());
+
+        // Import UXML created manually.
+        var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/SimpleCustomEditor_uxml.uxml");
+        VisualElement labelFromUXML_uxml = visualTree.Instantiate();
+        root.Add(labelFromUXML_uxml);
 
         //Call the event handler
         SetupButtonHandler();
     }
 
-    //Functions as the event handlers for your button click and number counts 
+    //Functions as the event handlers for your button click and number counts
     private void SetupButtonHandler()
     {
         VisualElement root = rootVisualElement;
