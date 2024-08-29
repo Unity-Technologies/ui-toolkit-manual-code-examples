@@ -11,7 +11,7 @@ public class PlanetsTreeView : PlanetsWindow
 
     void CreateGUI()
     {
-        uxml.CloneTree(rootVisualElement);
+        uxmlAsset.CloneTree(rootVisualElement);
         var treeView = rootVisualElement.Q<TreeView>();
 
         // Call TreeView.SetRootItems() to populate the data in the tree.

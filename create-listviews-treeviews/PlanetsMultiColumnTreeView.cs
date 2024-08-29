@@ -11,7 +11,7 @@ public class PlanetsMultiColumnTreeView : PlanetsWindow
 
     void CreateGUI()
     {
-        uxml.CloneTree(rootVisualElement);
+        uxmlAsset.CloneTree(rootVisualElement);
         var treeView = rootVisualElement.Q<MultiColumnTreeView>();
 
         // Call MultiColumnTreeView.SetRootItems() to populate the data in the tree.

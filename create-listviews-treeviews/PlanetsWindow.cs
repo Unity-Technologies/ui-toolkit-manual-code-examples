@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class PlanetsWindow : EditorWindow
 {
     [SerializeField]
-    protected VisualTreeAsset uxml;
+    protected VisualTreeAsset uxmlAsset;
 
     // Nested interface that may be either a single planet or a group of planets.
     protected interface IPlanetOrGroup

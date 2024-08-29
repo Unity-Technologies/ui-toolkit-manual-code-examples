@@ -11,7 +11,7 @@ public class PlanetsMultiColumnListView : PlanetsWindow
 
     void CreateGUI()
     {
-        uxml.CloneTree(rootVisualElement);
+        uxmlAsset.CloneTree(rootVisualElement);
         var listView = rootVisualElement.Q<MultiColumnListView>();
 
         // Set MultiColumnListView.itemsSource to populate the data in the list.

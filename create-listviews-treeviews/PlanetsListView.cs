@@ -11,7 +11,7 @@ public class PlanetsListView : PlanetsWindow
 
     void CreateGUI()
     {
-        uxml.CloneTree(rootVisualElement);
+        uxmlAsset.CloneTree(rootVisualElement);
         var listView = rootVisualElement.Q<ListView>();
 
         // Set ListView.itemsSource to populate the data in the list.
