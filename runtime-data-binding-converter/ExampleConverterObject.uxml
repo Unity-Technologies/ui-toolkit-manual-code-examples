@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" 
+engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Label text="Label" data-source="ExampleConverterObject.asset" data-source-path="dangerLevel">
+        <Bindings>
+            <ui:DataBinding property="style.backgroundColor" binding-mode="ToTarget" source-to-ui-converters="Value To Progress" />
+            <ui:DataBinding property="text" binding-mode="ToTarget" source-to-ui-converters="Value To Progress" />
+        </Bindings>
+    </ui:Label>
+</ui:UXML>

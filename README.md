@@ -72,6 +72,8 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 ## Runtime binding examples
 
 - [Get started with runtime binding](https://docs.unity3d.com/6000.0/Documentation/Manual/UIE-get-started-runtime-binding.html)
+- [Bind to multiple properties with runtime binding](https://docs.unity3d.com/6000.0/Documentation/Manual/UIE-bind-to-multiple-properties-with-runtime-binding.html)
+- [Create a runtime binding with a type converter](https://docs.unity3d.com/6000.0/Documentation/Manual/UIE-create-runtime-binding-type-converter.html)
 - [Create a custom binding to bind USS selectors](https://docs.unity3d.com/6000.0/Documentation/Manual/UIE-runtime-custom-binding-bind-uss.html)
 - [Bind ListView to a list with runtime binding](https://docs.unity3d.com/6000.0/Documentation/Manual/UIE-runtime-binding-list-view.html)
 

@@ -1,0 +1,15 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" 
+xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement data-source="MulPropertyObject.asset" name="VisualElement" style="flex-grow: 1;">
+        <engine:Vector3IntField label="Vector3Int">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="vector3Value" binding-mode="ToSource" />
+            </Bindings>
+        </engine:Vector3IntField>
+        <engine:FloatField label="Float Field" name="FloatField">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="sumOfVector3Properties" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:FloatField>
+    </engine:VisualElement>
+</engine:UXML>
