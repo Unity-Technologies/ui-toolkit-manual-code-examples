@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19106, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SwirlfFilterFunction
+  m_EditorClassIdentifier: 
+  m_FilterName: swirl
+  m_Parameters:
+  - m_InterpolationDefaultValue:
+      m_Type: 0
+      m_FloatValue: 0
+      m_ColorValue: {r: 0, g: 0, b: 0, a: 0}
+  - m_InterpolationDefaultValue:
+      m_Type: 0
+      m_FloatValue: 0
+      m_ColorValue: {r: 0, g: 0, b: 0, a: 0}
+  m_Passes:
+  - m_Material: {fileID: 2100000, guid: 9849d10efcac8074da47726363a7baca, type: 2}
+    m_PassIndex: 0
+    m_ParameterBindings:
+    - m_Index: 0
+      m_Name: _Angle
+    - m_Index: 1
+      m_Name: _Radius
+    m_ReadMargins:
+      m_Left: 0
+      m_Top: 0
+      m_Right: 0
+      m_Bottom: 0
+    m_WriteMargins:
+      m_Left: 0
+      m_Top: 0
+      m_Right: 0
+      m_Bottom: 0

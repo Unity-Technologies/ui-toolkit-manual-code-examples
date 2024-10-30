@@ -3,3 +3,5 @@
 # Please do not add editor specific ignore lines to this file. Unity best practices
 # documentation regarding this can be found at
 # https://github.com/Applifier/unity-ads-documentation/wiki/Conventions#gitignore
+
+.DS_Store

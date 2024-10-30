@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="SwirlFilterExample.uss" />
+    <engine:VisualElement class="outside filterEffect">
+        <engine:VisualElement class="inside" />
+    </engine:VisualElement>
+</engine:UXML>

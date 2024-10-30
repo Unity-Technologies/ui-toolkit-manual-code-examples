@@ -1,0 +1,23 @@
+.outside {
+    flex-grow: 1;
+    position: absolute;
+    height: 207px;
+    width: 234px;
+    top: 46px;
+    left: 27px;
+    background-color: rgb(255, 0, 0);
+}
+
+.inside {
+    flex-grow: 1;
+    position: absolute;
+    height: 75px;
+    width: 100px;
+    top: 46px;
+    left: 27px;
+    background-color: rgb(0, 255, 247);
+}
+
+.filterEffect {
+    filter: filter("SwirlFilter/SwirlfFilterFunction.asset" 58.9 2.3);
+}
