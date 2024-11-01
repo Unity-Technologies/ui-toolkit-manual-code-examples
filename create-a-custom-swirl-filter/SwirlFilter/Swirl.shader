@@ -51,7 +51,6 @@ Shader "Unlit/Swirl"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // https://www.shadertoy.com/view/Xscyzn
                 float effectRadius = _Radius;
                 float effectAngle = _Angle;
                 
