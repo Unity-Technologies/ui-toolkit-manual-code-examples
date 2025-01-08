@@ -32,6 +32,9 @@ public class MovingNameTag : MonoBehaviour
         m_BaseContainer = m_BaseContainerDocument.rootVisualElement.Q<VisualElement>("BaseContainer");
         
         m_NpcNameTag = m_NameTagTemplate.Instantiate();
+
+        // Set DynamicTransform hint on the moving element to optimize performance.
+        m_NpcNameTag.usageHints = UsageHints.DynamicTransform;
         m_BaseContainer.Add(m_NpcNameTag);
         m_NpcNameTag.style.position = new StyleEnum<Position>(Position.Absolute);
     }

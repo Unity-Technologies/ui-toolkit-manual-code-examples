@@ -1,3 +1,3 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Label text="NPC" name="NameTag" picking-mode="Ignore" usage-hints="DynamicTransform" />
-</ui:UXML>
+<engine:UXML xmlns:engine="UnityEngine.UIElements">
+    <engine:Label text="NPC" name="NameTag" picking-mode="Ignore" />
+</engine:UXML>
