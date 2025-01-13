@@ -59,7 +59,7 @@ public class MovingNameTag : MonoBehaviour
 
         m_NpcNameTag.style.scale = new Scale(new Vector2(scale, scale));
         
-        / /Display name tag based on whether it's in front of the camera and within culling range.
+        // Display name tag based on whether it's in front of the camera and within culling range.
         if (cameraSpaceLocation.z < 0 || distance > m_DistanceCullingRange)
         {
             m_NpcNameTag.style.display = DisplayStyle.None;

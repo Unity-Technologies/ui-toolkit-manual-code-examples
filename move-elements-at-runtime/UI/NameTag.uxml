@@ -1,3 +1,4 @@
 <engine:UXML xmlns:engine="UnityEngine.UIElements">
+    <Style src="NameTag.uss" />
     <engine:Label text="NPC" name="NameTag" picking-mode="Ignore" />
 </engine:UXML>

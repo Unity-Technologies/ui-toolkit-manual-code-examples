@@ -1,0 +1,10 @@
+#NameTag {
+    /* This sets the position of the Label element to be absolute, rather than relative to the parent container. */
+    position: absolute;
+    /* This ensures that the pivot point of the Label element is centered, rather than in the top left corner.*/
+    translate: -50% -50%;
+    -unity-font-style: bold;
+    color: rgb(181, 210, 248);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(11, 60, 123);
+}

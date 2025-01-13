@@ -1,0 +1,3 @@
+<engine:UXML xmlns:engine="UnityEngine.UIElements" >
+    <engine:VisualElement name="BaseContainer" style="flex-grow: 1;" />
+</engine:UXML>
