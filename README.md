@@ -13,6 +13,7 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 ## Runtime UI examples
 
 - [Get started with runtime UI](https://docs.unity3d.com/Documentation/Manual/UIE-get-started-with-runtime-ui.html)
+- [Move elements at runtime](https://docs.unity3d.com/6000.1/Documentation/Manual/UIE-move-elements-at-runtime.html)
 
 
 ## Custom controls examples
