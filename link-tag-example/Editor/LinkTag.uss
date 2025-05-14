@@ -1,0 +1,10 @@
+Label {
+    font-size: 75px;
+}
+
+/*Turn the mouse pointer into a hand pointer when you hover over the link text.
+  Note that the cursor override for the link value doesn’t work at runtime.*/
+
+.link-cursor {
+    cursor: link;
+}

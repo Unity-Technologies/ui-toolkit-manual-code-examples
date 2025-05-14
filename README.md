@@ -69,4 +69,9 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 - [Create a pie chart in the Editor and runtime UI](https://docs.unity3d.com/2022.2/Documentation/Manual/UIE-pie-chart.html)
 - [Use Vector API to create a radial progress indicator](https://docs.unity3d.com/2022.2/Documentation/Manual/UIE-radial-progress-use-vector-api.html)
 
+## Text examples
+
+- [Get started with text](https://docs.unity3d.com/Manual/UIE-get-started-with-text.html)
+- [Add hyperlinks in text](https://docs.unity3d.com/Documentation/Manual/ui-systems/add-hyperlinks-in-text.html)
+
 

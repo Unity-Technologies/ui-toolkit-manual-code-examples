@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="LinkTag.uss" />
+    <ui:Label tabindex="-1" text="Link to &lt;link=&quot;1&quot;&gt;&lt;color=#40a0ff&gt;&lt;u&gt;Unity&lt;/u&gt;&lt;/color&gt;&lt;/link&gt;&#10;Link to &lt;link=&quot;2&quot;&gt;&lt;color=#40a0ff&gt;&lt;u&gt;UITK Discussions&lt;/u&gt;&lt;/color&gt;&lt;/link&gt;!" display-tooltip-when-elided="true" enable-rich-text="true" selectable="true" emoji-fallback-support="false" class="link" />
+    <ui:Label tabindex="-1" text="Link to &lt;a href=&quot;https://www.google.com/&quot;&gt;&lt;u&gt;Google&lt;/u&gt;&lt;/a&gt; using &lt;noparse&gt;&lt;a&gt;&lt;/noparse&gt; tag." display-tooltip-when-elided="true" name="Label" />
+</ui:UXML>
