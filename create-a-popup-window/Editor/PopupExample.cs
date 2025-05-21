@@ -14,7 +14,7 @@ public class PopupExample : EditorWindow
 
      private void CreateGUI()
      {
-          var visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/ui-toolkit-manual-code-examples/create-a-popup-window/PopupExample.uxml");
+          var visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/PopupExample.uxml");
           visualTreeAsset.CloneTree(rootVisualElement);
 
           var button = rootVisualElement.Q<Button>();

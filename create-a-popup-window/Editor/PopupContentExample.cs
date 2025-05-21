@@ -11,7 +11,7 @@ public class PopupContentExample : PopupWindowContent
 
     public override VisualElement CreateGUI()
     {
-        var visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/ui-toolkit-manual-code-examples/create-a-popup-window/PopupWindowContent.uxml");
+        var visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/PopupWindowContent.uxml");
         return visualTreeAsset.CloneTree();
     }
 
