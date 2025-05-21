@@ -125,7 +125,7 @@ namespace MyUILibrary
 
         // DrawMeshes() uses the EllipseMesh utility class to generate an array of vertices and indices, for both the
         // "track" ring (in grey) and the progress ring (in green). It then passes the geometry to the MeshWriteData
-        // object, as returned by the MeshGenerationContext.Allocate() method. For the "progress" __mesh__The main graphics primitive of Unity. Meshes make up a large part of your 3D worlds. Unity supports triangulated or Quadrangulated polygon meshes. Nurbs, Nurms, Subdiv surfaces must be converted to polygons. [More info](comp-MeshGroup.html)<span class="tooltipGlossaryLink">See in [Glossary](Glossary.html#Mesh)</span>, only a slice of
+        // object, as returned by the MeshGenerationContext.Allocate() method. For the "progress", only a slice of
         // the index arrays is used to progressively reveal parts of the mesh.
         void DrawMeshes(MeshGenerationContext context)
         {
