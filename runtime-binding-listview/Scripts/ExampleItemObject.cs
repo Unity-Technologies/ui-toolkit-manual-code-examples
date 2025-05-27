@@ -9,14 +9,12 @@ public class ExampleItemObject
     public void Reset()
     {
         items = new List<Item>{
-            new() { name = "Use Local Serverdfsdfsd", enabled = false },
+            new() { name = "Use Local Server", enabled = false },
             new() { name = "Show Debug Menu", enabled = false },
             new() { name = "Show FPS Counter", enabled = true },
         };
     }
 
-    // Use a struct instead of a class to ensure that the ListView can create items 
-    // when the + button is clicked.
     public struct Item
     {
         public bool enabled;
