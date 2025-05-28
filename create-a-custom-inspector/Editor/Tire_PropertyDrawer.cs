@@ -7,9 +7,6 @@ public class Tire_PropertyDrawer : PropertyDrawer
 {
     public override VisualElement CreatePropertyGUI(SerializedProperty property)
     {
-        // Create a new VisualElement to be the root the property UI.
-        var container = new VisualElement();
-
         // Create drawer UI using C#.
         var popup = new UnityEngine.UIElements.PopupWindow();
         popup.text = "Tire Details";

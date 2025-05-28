@@ -8,11 +8,11 @@ public class Car_Inspector : Editor
     public VisualTreeAsset m_InspectorXML;
     public override VisualElement CreateInspectorGUI()
     {
-        // Create a new VisualElement to be the root of the Inspector UI.
-        VisualElement myInspector = new VisualElement();
+        // Load the reference UXML.
+        m_InspectorXML= AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/create-a-custom-inspector/Car_Inspector_UXML.uxml");
 
-        // Load from default reference.
-        m_InspectorXML.CloneTree(myInspector);
+        // Instantiate the UXML.
+        VisualElement myInspector = m_InspectorXML.Instantiate();
 
         // Get a reference to the default Inspector Foldout control.
         VisualElement InspectorFoldout = myInspector.Q("Default_Inspector");
