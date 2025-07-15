@@ -7,7 +7,10 @@ Shader "Unlit/Swirl"
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-        LOD 100
+        Blend One OneMinusSrcAlpha
+        ZWrite Off
+        ZTest Always
+        Cull Off
 
         Pass
         {
