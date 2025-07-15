@@ -9,7 +9,7 @@ Shader "Unlit/Swirl"
         Tags { "RenderType"="Opaque" }
         Blend One OneMinusSrcAlpha
         ZWrite Off
-        ZTest Always 
+        ZTest Always
         Cull Off
 
         Pass
@@ -18,54 +18,69 @@ Shader "Unlit/Swirl"
             #pragma vertex vert
             #pragma fragment frag
 
-            #include "UnityCG.hlsl"
-
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
+            #include "UnityCG.cginc"
+            #include "UnityUIEFilter.cginc"
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                uint rectIndex : TEXCOORD1;
             };
 
-            Texture2D _MainTex;
+            sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _MainTex_TexelSize;
-
-            SamplerState my_linear_repeat_sampler;
 
             float _Angle;
             float _Radius;
 
-            v2f vert (appdata v)
+            v2f vert (FilterVertexInput v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.rectIndex = GetFilterRectIndex(v);
                 return o;
+            }
+
+            float2 NormalizeUVs(float2 uv, float4 uvRect)
+            {
+                // Normalize UV coordinates based on the atlas rect
+                return float2(
+                    (uv.x - uvRect.x) / uvRect.z,
+                    (uv.y - uvRect.y) / uvRect.w
+                );
+            }
+
+            float2 MapToUVRect(float2 uv, float4 uvRect)
+            {
+                // Map UV coordinates to the atlas rect
+                return float2(
+                    uv.x * uvRect.z + uvRect.x,
+                    uv.y * uvRect.w + uvRect.y
+                );
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
                 float effectRadius = _Radius;
                 float effectAngle = _Angle;
-                
+
+                float4 uvRect = GetFilterUVRect(i.rectIndex);
+
+                float2 uv = NormalizeUVs(i.uv, uvRect);
                 float2 center = float2(0.5, 0.5);
-                
-                float2 uv = i.uv - center;
-                
+                uv = uv - center;
+
                 float len = length(uv * float2(_MainTex_TexelSize.z * _MainTex_TexelSize.y, 1.));
                 float angle = atan2(uv.y, uv.x) + effectAngle * smoothstep(effectRadius, 0., len);
                 float radius = length(uv);
 
                 uv = radius * float2(cos(angle), sin(angle)) + center;
-                fixed4 fragColor = _MainTex.Sample(my_linear_repeat_sampler, uv);
-                
-                return fragColor;
+                uv = MapToUVRect(uv, uvRect);
+
+                return tex2D(_MainTex, uv);
             }
             ENDCG
         }
