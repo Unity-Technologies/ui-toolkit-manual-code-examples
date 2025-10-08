@@ -19,5 +19,5 @@
 }
 
 .filterEffect {
-    filter: filter("SwirlFilter/SwirlfFilterFunction.asset" 58.9 2.3);
+    filter: filter("SwirlFilter/SwirlFilterFunction.asset" 58.9 2.3);
 }
