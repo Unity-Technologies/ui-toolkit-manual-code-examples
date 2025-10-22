@@ -9,21 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 19106, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SwirlfFilterFunction
-  m_EditorClassIdentifier: 
-  m_FilterName: swirl
+  m_Script: {fileID: 19107, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SwirlFilterFunction
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.FilterFunctionDefinition
+  m_FilterName: 
   m_Parameters:
-  - m_InterpolationDefaultValue:
+  - m_Name: angle
+    m_InterpolationDefaultValue:
       m_Type: 0
       m_FloatValue: 0
       m_ColorValue: {r: 0, g: 0, b: 0, a: 0}
-  - m_InterpolationDefaultValue:
+  - m_Name: radius
+    m_InterpolationDefaultValue:
       m_Type: 0
       m_FloatValue: 0
       m_ColorValue: {r: 0, g: 0, b: 0, a: 0}
   m_Passes:
-  - m_Material: {fileID: 2100000, guid: 9849d10efcac8074da47726363a7baca, type: 2}
+  - m_Material: {fileID: 160154789899534285, guid: ee6641ed38cea074db929e71fd4664d8, type: 3}
     m_PassIndex: 0
     m_ParameterBindings:
     - m_Index: 0
