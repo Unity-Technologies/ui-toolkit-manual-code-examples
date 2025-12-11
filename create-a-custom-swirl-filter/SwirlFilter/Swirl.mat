@@ -8,10 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Swirl
-  m_Shader: {fileID: 4800000, guid: 5dbb6a0cc7d83894dbc7350392d137af, type: 3}
+  m_Shader: {fileID: 4800000, guid: a0086fb18538742a0b09fc35e29d48e7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _UIE_OUTPUT_LINEAR
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

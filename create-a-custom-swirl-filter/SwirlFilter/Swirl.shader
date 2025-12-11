@@ -17,6 +17,7 @@ Shader "Unlit/Swirl"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma multi_compile _ _UIE_OUTPUT_LINEAR
 
             #include "UnityCG.cginc"
             #include "UnityUIEFilter.cginc"
@@ -80,7 +81,13 @@ Shader "Unlit/Swirl"
                 uv = radius * float2(cos(angle), sin(angle)) + center;
                 uv = MapToUVRect(uv, uvRect);
 
-                return tex2D(_MainTex, uv);
+                half4 col = tex2D(_MainTex, uv);
+
+                #if _UIE_OUTPUT_LINEAR
+                col.rgb = GammaToLinearSpace(col.rgb);
+                #endif
+
+                return col;
             }
             ENDCG
         }
