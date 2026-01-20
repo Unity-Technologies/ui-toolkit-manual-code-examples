@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:ListView binding-source-selection-mode="AutoAssign" item-template="ListViewItem.uxml" data-source="GameSwitchListAsset.asset" show-foldout-header="true" virtualization-method="DynamicHeight" show-border="false" reorderable="true" horizontal-scrolling="false" selection-type="Single" reorder-mode="Animated" show-add-remove-footer="true">
+        <Bindings>
+            <ui:DataBinding property="itemsSource" data-source-path="switches"/>
+        </Bindings>
+    </ui:ListView>
+</ui:UXML>

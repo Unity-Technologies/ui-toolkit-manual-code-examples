@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="" style="flex-direction: row;">
+        <ui:Toggle>
+            <Bindings>
+                <ui:DataBinding property="value" data-source-path="enabled" binding-mode="TwoWay"/>
+            </Bindings>
+        </ui:Toggle>
+        <ui:TextField placeholder-text="filler text">
+            <Bindings>
+                <ui:DataBinding property="value" data-source-path="name" binding-mode="TwoWay"/>
+            </Bindings>
+        </ui:TextField>
+    </ui:VisualElement>
+</ui:UXML>
