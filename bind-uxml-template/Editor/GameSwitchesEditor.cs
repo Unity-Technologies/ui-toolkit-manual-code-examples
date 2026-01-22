@@ -1,18 +1,30 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEditor.UIElements;
 
-namespace UIToolkitExamples
+public class UXMLTemplateBindingExample : EditorWindow
 {
-    [CustomEditor(typeof(GameSwitchesAsset))]
-    public class GameSwitchesEditor : Editor
-    {
-        [SerializeField]
-        VisualTreeAsset visualTreeAsset;
+    [SerializeField]
+    private VisualTreeAsset m_VisualTreeAsset = default;
 
-        public override VisualElement CreateInspectorGUI()
-        {
-            return visualTreeAsset.CloneTree();
-        }
+    [SerializeField]
+    private GameSwitchesAsset gameSwitch;
+
+    [MenuItem("UI Toolkit Examples/UXML Template Binding Example")]
+    public static void ShowExample()
+    {
+        UXMLTemplateBindingExample wnd = GetWindow<UXMLTemplateBindingExample>();
+        wnd.titleContent = new GUIContent("UXML Template Binding Example");
+    }
+
+    public void CreateGUI()
+    {
+        VisualElement root = rootVisualElement;
+        m_VisualTreeAsset.CloneTree(root);
+
+        root.Bind(new SerializedObject(gameSwitch));
+       
     }
 }

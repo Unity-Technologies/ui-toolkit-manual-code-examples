@@ -1,24 +1,36 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEditor.UIElements;
 
-namespace UIToolkitExamples
+public class ListViewBindingExample : EditorWindow
 {
-    [CustomEditor(typeof(GameSwitchListAsset))]
-    public class GameSwitchListEditor : Editor
+    [SerializeField]
+    private VisualTreeAsset m_VisualTreeAsset = default;
+
+    [SerializeField]
+    private GameSwitchListAsset gameSwitchList;
+
+    [MenuItem("UI Toolkit Examples/ListView SerializedObject Binding Example")]
+    public static void ShowExample()
     {
-        [SerializeField]
-        VisualTreeAsset m_ItemAsset;
+        ListViewBindingExample wnd = GetWindow<ListViewBindingExample>();
+        wnd.titleContent = new GUIContent("ListView Binding SerializedObject Example");
+    }
 
-        [SerializeField]
-        VisualTreeAsset m_EditorAsset;
+    public void CreateGUI()
+    {
+        VisualElement root = rootVisualElement;
+        m_VisualTreeAsset.CloneTree(root);
 
-        public override VisualElement CreateInspectorGUI()
+        var listView = root.Q<ListView>();
+        if (listView != null && gameSwitchList != null)
         {
-            var root = m_EditorAsset.CloneTree();
-            var listView = root.Q<ListView>();
-            listView.makeItem = m_ItemAsset.CloneTree;
-            return root;
+            // Set the items source.
+            listView.itemsSource = gameSwitchList.switches;
+            // Bind the ListView to the GameSwitchListAsset serialized object.
+            listView.Bind(new SerializedObject(gameSwitchList));
         }
     }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce160ca4f7e51491383abd6a96a574cd, type: 3}
+  m_Name: GameSwitchesAsset
+  m_EditorClassIdentifier: DocsExampleUIToolkit::GameSwitchesAsset
+  useLocalServer:
+    name: Use Local Server
+    enabled: 0
+  showDebugMenu:
+    name: Show Debug Menu
+    enabled: 0
+  showFPSCounter:
+    name: Show FPS Counter
+    enabled: 1

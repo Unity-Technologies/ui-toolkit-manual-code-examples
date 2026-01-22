@@ -1,23 +1,28 @@
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
-
-namespace UIToolkitExamples
+  
+[CreateAssetMenu(fileName = "GameSwitchListAsset.asset", menuName = "GameSwitchListAsset")]
+public class GameSwitchListAsset : ScriptableObject
 {
-    [CreateAssetMenu(menuName = "UIToolkitExamples/GameSwitchList")]
-    public class GameSwitchListAsset : ScriptableObject
+    public List<GameSwitch> switches = new();
+
+    public void Reset()
     {
-        public List<GameSwitch> switches;
+        switches = new List<GameSwitch>{
+            new() { name = "Use Local Server", enabled = false },
+            new() { name = "Show Debug Menu", enabled = false },
+            new() { name = "Show FPS Counter", enabled = true },
+        };
+    }
 
-        public void Reset()
-        {
-            switches = new()
-            {
-                new() { name = "Use Local Server", enabled = false },
-                new() { name = "Show Debug Menu", enabled = false },
-                new() { name = "Show FPS Counter", enabled = true },
-            };
-        }
+    public bool IsSwitchEnabled(string switchName) => switches.Find(s => s.name == switchName).enabled;
 
-        public bool IsSwitchEnabled(string switchName) => switches.Find(s => s.name == switchName).enabled;
+    [Serializable]
+    public struct GameSwitch
+    {
+        public bool enabled;
+        public string name;
     }
 }

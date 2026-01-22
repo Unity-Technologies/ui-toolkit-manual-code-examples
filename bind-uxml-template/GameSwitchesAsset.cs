@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "UIToolkitExamples/GameSwitches")]
+[CreateAssetMenu(fileName = "GameSwitchAsset.asset", menuName = "GameSwitchAsset")]
 public class GameSwitchesAsset : ScriptableObject
 {
     public GameSwitch useLocalServer;
@@ -13,5 +14,12 @@ public class GameSwitchesAsset : ScriptableObject
         useLocalServer = new GameSwitch() { name = "Use Local Server", enabled = false };
         showDebugMenu = new GameSwitch() { name = "Show Debug Menu", enabled = false };
         showFPSCounter = new GameSwitch() { name = "Show FPS Counter", enabled = true };
+    }
+
+    [Serializable]
+    public struct GameSwitch
+    {
+        public string name;
+        public bool enabled;
     }
 }

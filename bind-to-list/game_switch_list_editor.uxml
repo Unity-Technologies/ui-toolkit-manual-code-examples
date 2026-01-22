@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:ListView virtualization-method="DynamicHeight" reorder-mode="Simple" binding-path="switches" show-add-remove-footer="true" show-foldout-header="true" header-title="" reorderable="true" item-template="game_switch.uxml" allow-add="true">
+    </ui:ListView>
+</ui:UXML>
