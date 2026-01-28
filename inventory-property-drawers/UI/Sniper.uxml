@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Character name="Sniper">
+        <inventory>
+            <Inventory next-item-id="4">
+                <Items>
+                    <Gun id="1" name="Rifle" weight="4.5" damage="33" ammo="7/7" />
+                    <Sword id="2" name="Knife" weight="0.5" slash-damage="7" />
+                    <HealthPack id="3" />
+                </Items>
+            </Inventory>
+        </inventory>
+    </Character>
+</ui:UXML>
