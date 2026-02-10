@@ -3,37 +3,45 @@ using UnityEngine.UIElements;
 
 public class SimpleRuntimeUI : MonoBehaviour
 {
-    private Button _button;
-    private Toggle _toggle;
+    private Button button;
+    private Toggle toggle;
+    private VisualElement root;
 
-    private int _clickCount;
+    private int clickCount;
 
-    //Add logic that interacts with the UI controls in the `OnEnable` methods
     private void OnEnable()
     {
-        // The UXML is already instantiated by the UIDocument component
-        var uiDocument = GetComponent<UIDocument>();
-
-        _button = uiDocument.rootVisualElement.Q("button") as Button;
-        _toggle = uiDocument.rootVisualElement.Q("toggle") as Toggle;
-
-        _button.RegisterCallback<ClickEvent>(PrintClickMessage);
-
-        var _inputFields = uiDocument.rootVisualElement.Q("input-message");
-        _inputFields.RegisterCallback<ChangeEvent<string>>(InputMessage);
+        GetComponent<PanelRenderer>().RegisterUIReloadCallback(OnUIReload);
     }
 
     private void OnDisable()
     {
-        _button.UnregisterCallback<ClickEvent>(PrintClickMessage);
+        GetComponent<PanelRenderer>().UnregisterUIReloadCallback(OnUIReload);
+        if (button != null)
+        {
+            button.UnregisterCallback<ClickEvent>(PrintClickMessage);
+        }
+    }
+
+    private void OnUIReload(PanelRenderer panelRenderer, VisualElement rootElement)
+    {
+        root = rootElement;
+
+        button = root.Q("button") as Button;
+        toggle = root.Q("toggle") as Toggle;
+
+        button.RegisterCallback<ClickEvent>(PrintClickMessage);
+
+        var inputFields = root.Q("input-message");
+        inputFields.RegisterCallback<ChangeEvent<string>>(InputMessage);
     }
 
     private void PrintClickMessage(ClickEvent evt)
     {
-        ++_clickCount;
+        ++clickCount;
 
         Debug.Log($"{"button"} was clicked!" +
-                (_toggle.value ? " Count: " + _clickCount : ""));
+                (toggle.value ? " Count: " + clickCount : ""));
     }
 
     public static void InputMessage(ChangeEvent<string> evt)
@@ -41,3 +49,4 @@ public class SimpleRuntimeUI : MonoBehaviour
         Debug.Log($"{evt.newValue} -> {evt.target}");
     }
 }
+
