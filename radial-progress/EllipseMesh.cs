@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MyUILibrary
+namespace MeshAPIExample
 {
     public class EllipseMesh
     {

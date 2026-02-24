@@ -5,16 +5,19 @@ using UnityEngine.UIElements;
 public class SortElements : MonoBehaviour
 {
     [SerializeField]
-    UIDocument m_MovingElements;
+    PanelRenderer m_MovingElements;
 
     VisualElement m_BaseContainer;
 
     MovingNameTag[] m_MovingNameTags;
-    
+
     void Start()
     {
         m_MovingNameTags = FindObjectsByType<MovingNameTag>(FindObjectsSortMode.None);
-        m_BaseContainer = m_MovingElements.rootVisualElement.Q<VisualElement>("BaseContainer");
+        m_MovingElements.RegisterUIReloadCallback((panelRenderer, root) =>
+        {
+            m_BaseContainer = root.Q<VisualElement>("BaseContainer");
+        });
     }
 
     void Update()

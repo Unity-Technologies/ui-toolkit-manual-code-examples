@@ -8,7 +8,7 @@ public class MovingNameTag : MonoBehaviour
     VisualTreeAsset m_NameTagTemplate;
 
     [SerializeField]
-    UIDocument m_BaseContainerDocument;
+    PanelRenderer m_BaseContainerDocument;
 
     [SerializeField]
     Transform m_UITransform;
@@ -29,14 +29,17 @@ public class MovingNameTag : MonoBehaviour
     {
         m_MainCamera = Camera.main;
         
-        m_BaseContainer = m_BaseContainerDocument.rootVisualElement.Q<VisualElement>("BaseContainer");
-        
-        m_NpcNameTag = m_NameTagTemplate.Instantiate();
+        m_BaseContainerDocument.RegisterUIReloadCallback((panelRenderer, root) =>
+        {
+            m_BaseContainer = root.Q<VisualElement>("BaseContainer");
 
-        // Set DynamicTransform hint on the moving element to optimize performance.
-        m_NpcNameTag.usageHints = UsageHints.DynamicTransform;
-        m_BaseContainer.Add(m_NpcNameTag);
-        m_NpcNameTag.style.position = new StyleEnum<Position>(Position.Absolute);
+            m_NpcNameTag = m_NameTagTemplate.Instantiate();
+
+            // Set DynamicTransform hint on the moving element to optimize performance.
+            m_NpcNameTag.usageHints = UsageHints.DynamicTransform;
+            m_BaseContainer.Add(m_NpcNameTag);
+            m_NpcNameTag.style.position = new StyleEnum<Position>(Position.Absolute);
+        });
     }
 
     void Update()

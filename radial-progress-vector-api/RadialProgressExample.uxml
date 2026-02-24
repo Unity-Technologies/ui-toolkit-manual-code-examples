@@ -1,6 +1,4 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="RadialProgress.uss"/>
-    <ui:VisualElement style="align-items: center;">
-        <MyUILibrary.RadialProgress progress="87.1" />
-    </ui:VisualElement>
+    <Painter2DExample.RadialProgress name="radial-progress" value="87" progress="87"/>
 </ui:UXML>

@@ -1,6 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="RadialProgress.uss"/>
-    <ui:VisualElement style="align-items: center;">
-        <MyUILibrary.RadialProgress progress="87.1" />
-    </ui:VisualElement>
+    <MeshAPIExample.RadialProgress name="radial-progress" progress="87"/>
 </ui:UXML>

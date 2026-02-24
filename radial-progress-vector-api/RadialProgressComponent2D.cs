@@ -1,9 +1,9 @@
-using MeshAPIExample;
+using Painter2DExample;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(PanelRenderer))]
-public class RadialProgressComponent : MonoBehaviour
+public class RadialProgressComponent2D : MonoBehaviour
 {
     RadialProgress m_RadialProgress;
 
@@ -31,3 +31,4 @@ public class RadialProgressComponent : MonoBehaviour
         }
     }
 }
+
