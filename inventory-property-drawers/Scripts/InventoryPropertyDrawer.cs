@@ -28,7 +28,11 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
             bindingPath = itemsProperty.propertyPath,
             overridingAddButtonBehavior = (baseListView, button) => OnAddItem(property, baseListView, button)
         };
-        container.Add(items);
+
+        var listViewDecorator = new UxmlAttributeFieldDecorator();
+        listViewDecorator.Add(items);
+
+        container.Add(listViewDecorator);
 
         container.Add(new Button(() =>
         {

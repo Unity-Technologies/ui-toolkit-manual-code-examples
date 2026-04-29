@@ -15,6 +15,7 @@ public class AmmoPropertyDrawer : PropertyDrawer
         var maxCount = property.FindPropertyRelative("maxCount");
 
         var ammoField = new IntegerField("Ammo") { isDelayed = true, bindingPath = count.propertyPath };
+        ammoField.AddToClassList(IntegerField.alignedFieldUssClassName);
         ammoField.TrackPropertyValue(count, p =>
         {
             count.intValue = Mathf.Min(p.intValue, maxCount.intValue);
