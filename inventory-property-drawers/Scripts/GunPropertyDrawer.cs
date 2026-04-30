@@ -14,16 +14,22 @@ using UnityEngine.UIElements;
 [CustomPropertyDrawer(typeof(Gun.UxmlSerializedData))]
 public class GunPropertyDrawer : UxmlSerializedDataPropertyDrawer
 {
+    // Cached to avoid a disk lookup on every drawer instantiation.
+    // Note: the path below must match the location of the UI folder in your project.
+    // If you move or rename the inventory-property-drawers folder, update this path accordingly.
+    static VisualTreeAsset s_Template;
+
     protected override void CreateChildPropertiesGUI(VisualElement container, SerializedProperty property)
     {
         container.Add(ItemTypeLabel("Gun"));
 
         // Pattern 1 & 2: load a UXML template that uses UxmlAttributeField and
         // UxmlAttributeFieldDecorator with binding-path for name, weight, damage, and fireRate.
-        var template = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-            "Assets/ui-toolkit-manual-code-examples/inventory-property-drawers/UI/GunDrawer.uxml");
-        if (template != null)
-            container.Add(template.Instantiate());
+        if (s_Template == null)
+            s_Template = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+                "Assets/ui-toolkit-manual-code-examples/inventory-property-drawers/UI/GunDrawer.uxml");
+        if (s_Template != null)
+            container.Add(s_Template.Instantiate());
 
         // Render the ammo property via CreateChildPropertyGUI. The base implementation creates a
         // UxmlAttributeField, which wraps a PropertyField that delegates to AmmoPropertyDrawer.

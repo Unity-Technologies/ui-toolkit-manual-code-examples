@@ -16,15 +16,21 @@ using UnityEditor.UIElements;
 [CustomPropertyDrawer(typeof(Inventory.UxmlSerializedData))]
 public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 {
+    // Cached to avoid a disk lookup on every drawer instantiation.
+    // Note: the path below must match the location of the UI folder in your project.
+    // If you move or rename the inventory-property-drawers folder, update this path accordingly.
+    static VisualTreeAsset s_Template;
+
     protected override void CreateChildPropertiesGUI(VisualElement container, SerializedProperty property)
     {
         // Pattern 1 & 2: load a UXML template that uses UxmlAttributeField and
         // UxmlAttributeFieldDecorator with binding-path to render maxSlots and maxWeight.
         // The binding paths resolve relative to this UxmlSerializedData property automatically.
-        var inventoryDrawer = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-            "Assets/ui-toolkit-manual-code-examples/inventory-property-drawers/UI/InventoryDrawer.uxml");
-        if (inventoryDrawer != null)
-            container.Add(inventoryDrawer.Instantiate());
+        if (s_Template == null)
+            s_Template = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+                "Assets/ui-toolkit-manual-code-examples/inventory-property-drawers/UI/InventoryDrawer.uxml");
+        if (s_Template != null)
+            container.Add(s_Template.Instantiate());
 
         // Pattern 3: create a UxmlAttributeField in C# for the description property.
         container.Add(new UxmlAttributeField(property.FindPropertyRelative("description")));
@@ -73,13 +79,21 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
         }) { text = "Add Medic Gear" });
     }
 
-    void AddGun(SerializedProperty property, string name, float weight, float damage, float fireRate, int ammo, int maxAmmo)
+    // Appends a new item of the given type to the items array and assigns its ID.
+    // Returns the SerializedProperty for the new element so callers can set type-specific fields.
+    SerializedProperty AppendItem(SerializedProperty property, System.Type itemType)
     {
         var itemsProperty = property.FindPropertyRelative("items");
         itemsProperty.arraySize++;
         var newItem = itemsProperty.GetArrayElementAtIndex(itemsProperty.arraySize - 1);
-        newItem.managedReferenceValue = UxmlSerializedDataCreator.CreateUxmlSerializedData(typeof(Gun));
+        newItem.managedReferenceValue = UxmlSerializedDataCreator.CreateUxmlSerializedData(itemType);
         newItem.FindPropertyRelative("id").intValue = NextItemId(property);
+        return newItem;
+    }
+
+    void AddGun(SerializedProperty property, string name, float weight, float damage, float fireRate, int ammo, int maxAmmo)
+    {
+        var newItem = AppendItem(property, typeof(Gun));
         newItem.FindPropertyRelative("name").stringValue = name;
         newItem.FindPropertyRelative("weight").floatValue = weight;
         newItem.FindPropertyRelative("damage").floatValue = damage;
@@ -91,24 +105,13 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
     void AddSword(SerializedProperty property, string name, float weight, float damage)
     {
-        var itemsProperty = property.FindPropertyRelative("items");
-        itemsProperty.arraySize++;
-        var newItem = itemsProperty.GetArrayElementAtIndex(itemsProperty.arraySize - 1);
-        newItem.managedReferenceValue = UxmlSerializedDataCreator.CreateUxmlSerializedData(typeof(Sword));
-        newItem.FindPropertyRelative("id").intValue = NextItemId(property);
+        var newItem = AppendItem(property, typeof(Sword));
         newItem.FindPropertyRelative("name").stringValue = name;
         newItem.FindPropertyRelative("weight").floatValue = weight;
         newItem.FindPropertyRelative("slashDamage").floatValue = damage;
     }
 
-    void AddHealthPack(SerializedProperty property)
-    {
-        var itemsProperty = property.FindPropertyRelative("items");
-        itemsProperty.arraySize++;
-        var newItem = itemsProperty.GetArrayElementAtIndex(itemsProperty.arraySize - 1);
-        newItem.managedReferenceValue = UxmlSerializedDataCreator.CreateUxmlSerializedData(typeof(HealthPack));
-        newItem.FindPropertyRelative("id").intValue = NextItemId(property);
-    }
+    void AddHealthPack(SerializedProperty property) => AppendItem(property, typeof(HealthPack));
 
     int NextItemId(SerializedProperty property) => property.FindPropertyRelative("nextItemId").intValue++;
 
@@ -123,11 +126,7 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
             menu.AddItem(new GUIContent(item.Name), false, () =>
             {
-                var itemsProperty = property.FindPropertyRelative("items");
-                itemsProperty.arraySize++;
-                var newItem = itemsProperty.GetArrayElementAtIndex(itemsProperty.arraySize - 1);
-                newItem.managedReferenceValue = UxmlSerializedDataCreator.CreateUxmlSerializedData(item);
-                newItem.FindPropertyRelative("id").intValue = NextItemId(property);
+                AppendItem(property, item);
                 property.serializedObject.ApplyModifiedProperties();
             });
         }
