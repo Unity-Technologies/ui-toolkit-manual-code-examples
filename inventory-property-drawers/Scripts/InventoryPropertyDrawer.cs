@@ -83,9 +83,9 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
     // Returns the SerializedProperty for the new element so callers can set type-specific fields.
     SerializedProperty AppendItem(SerializedProperty property, System.Type itemType)
     {
-        var itemsProperty = property.FindPropertyRelative("items");
+        SerializedProperty itemsProperty = property.FindPropertyRelative("items");
         itemsProperty.arraySize++;
-        var newItem = itemsProperty.GetArrayElementAtIndex(itemsProperty.arraySize - 1);
+        SerializedProperty newItem = itemsProperty.GetArrayElementAtIndex(itemsProperty.arraySize - 1);
         newItem.managedReferenceValue = UxmlSerializedDataCreator.CreateUxmlSerializedData(itemType);
         newItem.FindPropertyRelative("id").intValue = NextItemId(property);
         return newItem;
@@ -93,7 +93,7 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
     void AddGun(SerializedProperty property, string name, float weight, float damage, float fireRate, int ammo, int maxAmmo)
     {
-        var newItem = AppendItem(property, typeof(Gun));
+        SerializedProperty newItem = AppendItem(property, typeof(Gun));
         newItem.FindPropertyRelative("name").stringValue = name;
         newItem.FindPropertyRelative("weight").floatValue = weight;
         newItem.FindPropertyRelative("damage").floatValue = damage;
@@ -105,7 +105,7 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
     void AddSword(SerializedProperty property, string name, float weight, float damage)
     {
-        var newItem = AppendItem(property, typeof(Sword));
+        SerializedProperty newItem = AppendItem(property, typeof(Sword));
         newItem.FindPropertyRelative("name").stringValue = name;
         newItem.FindPropertyRelative("weight").floatValue = weight;
         newItem.FindPropertyRelative("slashDamage").floatValue = damage;
@@ -117,8 +117,8 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
     void OnAddItem(SerializedProperty property, BaseListView baseListView, Button button)
     {
-        var menu = new GenericMenu();
-        var items = TypeCache.GetTypesDerivedFrom<Item>();
+        GenericMenu menu = new GenericMenu();
+        TypeCache.TypeCollection items = TypeCache.GetTypesDerivedFrom<Item>();
         foreach (var item in items)
         {
             if (item.IsAbstract)
