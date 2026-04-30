@@ -36,8 +36,8 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
         container.Add(new UxmlAttributeField(property.FindPropertyRelative("description")));
 
         // Pattern 4: create a UxmlAttributeFieldDecorator in C# to wrap the items ListView.
-        var itemsProperty = property.FindPropertyRelative("items");
-        var items = new ListView
+        SerializedProperty itemsProperty = property.FindPropertyRelative("items");
+        ListView items = new ListView
         {
             showAddRemoveFooter = true,
             showBorder = true,
@@ -49,7 +49,7 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
             overridingAddButtonBehavior = (baseListView, button) => OnAddItem(property, baseListView, button)
         };
 
-        var listViewDecorator = new UxmlAttributeFieldDecorator();
+        UxmlAttributeFieldDecorator listViewDecorator = new UxmlAttributeFieldDecorator();
         listViewDecorator.Add(items);
         container.Add(listViewDecorator);
 

@@ -12,23 +12,32 @@ public class AmmoPropertyDrawer : PropertyDrawer
 {
     public override VisualElement CreatePropertyGUI(SerializedProperty property)
     {
-        var root = new VisualElement();
+        VisualElement root = new VisualElement();
 
-        var count = property.FindPropertyRelative("count");
-        var maxCount = property.FindPropertyRelative("maxCount");
+        SerializedProperty count = property.FindPropertyRelative("count");
+        SerializedProperty maxCount = property.FindPropertyRelative("maxCount");
 
-        var row = new VisualElement { style = { flexDirection = FlexDirection.Row } };
+        VisualElement row = new VisualElement { style = { flexDirection = FlexDirection.Row } };
 
-        var countField = new IntegerField("Ammo") { isDelayed = true, bindingPath = count.propertyPath };
+        IntegerField countField = new IntegerField("Ammo")
+        {
+            isDelayed = true,
+            bindingPath = count.propertyPath
+        };
         countField.AddToClassList(IntegerField.alignedFieldUssClassName);
         row.Add(countField);
         row.Add(new Label("/") { style = { marginLeft = 2, marginRight = 2 } });
 
-        var maxCountField = new IntegerField { isDelayed = true, bindingPath = maxCount.propertyPath, style = { width = 50 } };
+        IntegerField maxCountField = new IntegerField
+        {
+            isDelayed = true,
+            bindingPath = maxCount.propertyPath,
+            style = { width = 50 }
+        };
         row.Add(maxCountField);
         root.Add(row);
 
-        var ammoBar = new ProgressBar();
+        ProgressBar ammoBar = new ProgressBar();
         root.Add(ammoBar);
 
         void UpdateBar()

@@ -33,7 +33,7 @@ public class GunPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
         // Render the ammo property via CreateChildPropertyGUI. The base implementation creates a
         // UxmlAttributeField, which wraps a PropertyField that delegates to AmmoPropertyDrawer.
-        var ammoProperty = property.FindPropertyRelative("ammo");
+        SerializedProperty ammoProperty = property.FindPropertyRelative("ammo");
         if (ammoProperty != null)
             CreateChildPropertyGUI(container, property, ammoProperty);
     }

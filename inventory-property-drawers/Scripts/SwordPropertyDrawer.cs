@@ -24,8 +24,8 @@ public class SwordPropertyDrawer : UxmlSerializedDataPropertyDrawer
             // Pattern 3 & 4 in C#: UxmlAttributeFieldDecorator wrapping an explicit Slider.
             // This uses the same control type as the Slider in InventoryDrawer.uxml, but created
             // in code rather than UXML.
-            var decorator = new UxmlAttributeFieldDecorator();
-            var slider = new Slider(childProperty.displayName, 1, 100)
+            UxmlAttributeFieldDecorator decorator = new UxmlAttributeFieldDecorator();
+            Slider slider = new Slider(childProperty.displayName, 1, 100)
             {
                 showInputField = true,
                 bindingPath = childProperty.propertyPath
