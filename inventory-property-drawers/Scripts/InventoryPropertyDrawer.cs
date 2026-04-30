@@ -1,10 +1,12 @@
-// When you add a UxmlObject to the inventory list, include an instance of UxmlSerializedData, not an Item.
-// To simplify this process, this example uses `UxmlSerializedDataCreator.CreateUxmlSerializedData`,
-// a utility method that creates a UxmlObject's UxmlSerializedData with default values.
+// This drawer showcases four ways to create inspector fields for UxmlSerializedData properties:
 //
-// In this approach, the assignment of an ID value is introduced. To manage this, the last used ID value is stored
-// within the element as a hidden field labeled `nextItemId`. Additionally, buttons are incorporated to add preconfigured
-// sets of items. For instance, a Soldier might receive a Rifle, Machete, and Performance Pack.
+//   1. UxmlAttributeField in UXML   – binding-path resolves relative to the UxmlSerializedData
+//                                      property because UxmlSerializedDataPropertyView sets up
+//                                      the binding context.
+//   2. UxmlAttributeFieldDecorator in UXML – wraps an explicit field type in UXML while keeping
+//                                      the override indicator bar and context menu.
+//   3. UxmlAttributeField in C#     – creates a field programmatically from a SerializedProperty.
+//   4. UxmlAttributeFieldDecorator in C# – wraps any IBindable element in code.
 using Unity.UIToolkit.Editor;
 using UnityEditor;
 using UnityEngine.UIElements;
@@ -16,6 +18,18 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 {
     protected override void CreateChildPropertiesGUI(VisualElement container, SerializedProperty property)
     {
+        // Pattern 1 & 2: load a UXML template that uses UxmlAttributeField and
+        // UxmlAttributeFieldDecorator with binding-path to render maxSlots and maxWeight.
+        // The binding paths resolve relative to this UxmlSerializedData property automatically.
+        var inventoryDrawer = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+            "Assets/ui-toolkit-manual-code-examples/inventory-property-drawers/UI/InventoryDrawer.uxml");
+        if (inventoryDrawer != null)
+            container.Add(inventoryDrawer.Instantiate());
+
+        // Pattern 3: create a UxmlAttributeField in C# for the description property.
+        container.Add(new UxmlAttributeField(property.FindPropertyRelative("description")));
+
+        // Pattern 4: create a UxmlAttributeFieldDecorator in C# to wrap the items ListView.
         var itemsProperty = property.FindPropertyRelative("items");
         var items = new ListView
         {
@@ -31,12 +45,11 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
         var listViewDecorator = new UxmlAttributeFieldDecorator();
         listViewDecorator.Add(items);
-
         container.Add(listViewDecorator);
 
         container.Add(new Button(() =>
         {
-            AddGun(property, "Rifle", 4.5f, 33, 30, 30);
+            AddGun(property, "Rifle", 4.5f, 33, 2.5f, 30, 30);
             AddSword(property, "Knife", 0.5f, 7);
             AddHealthPack(property);
             property.serializedObject.ApplyModifiedProperties();
@@ -44,7 +57,7 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
         container.Add(new Button(() =>
         {
-            AddGun(property, "Rifle", 4.5f, 33, 30, 30);
+            AddGun(property, "Rifle", 4.5f, 33, 2.5f, 30, 30);
             AddHealthPack(property);
             AddSword(property, "Machete", 1, 11);
             property.serializedObject.ApplyModifiedProperties();
@@ -52,7 +65,7 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
 
         container.Add(new Button(() =>
         {
-            AddGun(property, "Pistol", 1.5f, 10, 15, 15);
+            AddGun(property, "Pistol", 1.5f, 10, 1f, 15, 15);
             AddHealthPack(property);
             AddHealthPack(property);
             AddHealthPack(property);
@@ -60,7 +73,7 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
         }) { text = "Add Medic Gear" });
     }
 
-    void AddGun(SerializedProperty property, string name, float weight, float damage, int ammo, int maxAmmo)
+    void AddGun(SerializedProperty property, string name, float weight, float damage, float fireRate, int ammo, int maxAmmo)
     {
         var itemsProperty = property.FindPropertyRelative("items");
         itemsProperty.arraySize++;
@@ -70,6 +83,7 @@ public class InventoryPropertyDrawer : UxmlSerializedDataPropertyDrawer
         newItem.FindPropertyRelative("name").stringValue = name;
         newItem.FindPropertyRelative("weight").floatValue = weight;
         newItem.FindPropertyRelative("damage").floatValue = damage;
+        newItem.FindPropertyRelative("fireRate").floatValue = fireRate;
         var ammoInstance = newItem.FindPropertyRelative("ammo");
         ammoInstance.FindPropertyRelative("count").intValue = ammo;
         ammoInstance.FindPropertyRelative("maxCount").intValue = maxAmmo;
