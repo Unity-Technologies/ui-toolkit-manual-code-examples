@@ -1,7 +1,7 @@
-// AmmoPropertyDrawer inherits from PropertyDrawer because Ammo is a plain [Serializable] struct,
-// not a UxmlObject. There is no UxmlSerializedDataPropertyView to establish a relative binding
-// context, so the UI is built in C# and binding paths use absolute SerializedProperty.propertyPath
-// values. A ProgressBar provides visual feedback for the current ammo fill level.
+// `AmmoPropertyDrawer` inherits from `PropertyDrawer` because `Ammo` is a plain `[Serializable]` struct,
+// not a `UxmlObject`. There is no `UxmlSerializedDataPropertyView` to establish a relative binding
+// context, so the UI is built in C# and binding paths use absolute `SerializedProperty.propertyPath`
+// values. A `ProgressBar` provides visual feedback for the current ammo fill level.
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;

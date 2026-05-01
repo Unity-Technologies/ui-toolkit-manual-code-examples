@@ -1,12 +1,12 @@
-// This drawer showcases four ways to create inspector fields for UxmlSerializedData properties:
+// This drawer showcases four ways to create inspector fields for `UxmlSerializedData` properties:
 //
-//   1. UxmlAttributeField in UXML   – binding-path resolves relative to the UxmlSerializedData
-//                                      property because UxmlSerializedDataPropertyView sets up
-//                                      the binding context.
-//   2. UxmlAttributeFieldDecorator in UXML – wraps an explicit field type in UXML while keeping
-//                                      the override indicator bar and context menu.
-//   3. UxmlAttributeField in C#     – creates a field programmatically from a SerializedProperty.
-//   4. UxmlAttributeFieldDecorator in C# – wraps any IBindable element in code.
+//   1. `UxmlAttributeField` in UXML   – `binding-path` resolves relative to the `UxmlSerializedData`
+//                                        property because `UxmlSerializedDataPropertyView` sets up
+//                                        the binding context.
+//   2. `UxmlAttributeFieldDecorator` in UXML – wraps an explicit field type in UXML while keeping
+//                                        the override indicator bar and context menu.
+//   3. `UxmlAttributeField` in C#     – creates a field programmatically from a `SerializedProperty`.
+//   4. `UxmlAttributeFieldDecorator` in C# – wraps any `IBindable` element in code.
 using Unity.UIToolkit.Editor;
 using UnityEditor;
 using UnityEngine.UIElements;

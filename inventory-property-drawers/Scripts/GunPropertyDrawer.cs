@@ -1,11 +1,11 @@
-// GunPropertyDrawer showcases loading a UXML template inside a UxmlSerializedDataPropertyDrawer.
-// The template uses UxmlAttributeField (pattern 1) and UxmlAttributeFieldDecorator (pattern 2)
-// with binding-path. Because this is a UxmlSerializedDataPropertyDrawer, the binding context
-// set by UxmlSerializedDataPropertyView makes those relative binding-path values resolve correctly.
+// `GunPropertyDrawer` showcases loading a UXML template inside a `UxmlSerializedDataPropertyDrawer`.
+// The template uses `UxmlAttributeField` (pattern 1) and `UxmlAttributeFieldDecorator` (pattern 2)
+// with `binding-path`. Because this is a `UxmlSerializedDataPropertyDrawer`, the binding context
+// set by `UxmlSerializedDataPropertyView` makes those relative `binding-path` values resolve correctly.
 //
-// The ammo field is rendered by calling CreateChildPropertyGUI, which creates a UxmlAttributeField.
-// UxmlAttributeField internally uses a PropertyField, which invokes AmmoPropertyDrawer and
-// preserves the override indicator bar alongside the ammo count/max row and ProgressBar.
+// The ammo field is rendered by calling `CreateChildPropertyGUI`, which creates a `UxmlAttributeField`.
+// `UxmlAttributeField` internally uses a `PropertyField`, which invokes `AmmoPropertyDrawer` and
+// preserves the override indicator bar alongside the ammo count/max row and `ProgressBar`.
 using Unity.UIToolkit.Editor;
 using UnityEditor;
 using UnityEngine;
