@@ -16,7 +16,7 @@ public class PseudoStateChecker : MonoBehaviour
         GetComponent<PanelRenderer>().UnregisterUIReloadCallback(OnUIReload);
     }
 
-    void OnUIReload(PanelRenderer renderer, VisualElement rootElement)
+    void OnUIReload(PanelRenderer renderer, VisualElement rootElement, int version)
     {
         // Query for the elements. 
         myButton = rootElement.Q<Button>("my-button");

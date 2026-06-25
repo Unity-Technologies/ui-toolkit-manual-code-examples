@@ -13,8 +13,8 @@ public class SortElements : MonoBehaviour
 
     void Start()
     {
-        m_MovingNameTags = FindObjectsByType<MovingNameTag>(FindObjectsSortMode.None);
-        m_MovingElements.RegisterUIReloadCallback((panelRenderer, root) =>
+        m_MovingNameTags = FindObjectsByType<MovingNameTag>();
+        m_MovingElements.RegisterUIReloadCallback((panelRenderer, root, version) =>
         {
             m_BaseContainer = root.Q<VisualElement>("BaseContainer");
         });

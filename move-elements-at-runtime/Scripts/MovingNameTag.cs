@@ -29,7 +29,7 @@ public class MovingNameTag : MonoBehaviour
     {
         m_MainCamera = Camera.main;
         
-        m_BaseContainerDocument.RegisterUIReloadCallback((panelRenderer, root) =>
+        m_BaseContainerDocument.RegisterUIReloadCallback((panelRenderer, root, version) =>
         {
             m_BaseContainer = root.Q<VisualElement>("BaseContainer");
 

@@ -17,7 +17,7 @@ public class RadialProgressComponent2D : MonoBehaviour
         GetComponent<PanelRenderer>().UnregisterUIReloadCallback(OnUIReload);
     }
 
-    private void OnUIReload(PanelRenderer panelRenderer, VisualElement rootElement)
+    private void OnUIReload(PanelRenderer panelRenderer, VisualElement rootElement, int version)
     {
         // Find the RadialProgress element defined in UXML
         m_RadialProgress = rootElement.Q<RadialProgress>("radial-progress");

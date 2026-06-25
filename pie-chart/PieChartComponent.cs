@@ -17,7 +17,7 @@ public class PieChartComponent : MonoBehaviour
     {
         GetComponent<PanelRenderer>().UnregisterUIReloadCallback(OnUIReload);
     }
-    void OnUIReload(PanelRenderer renderer, VisualElement rootElement)
+    void OnUIReload(PanelRenderer renderer, VisualElement rootElement, int version)
     {
         rootElement.Add(m_PieChart);
     }
