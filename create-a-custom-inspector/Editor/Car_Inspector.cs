@@ -5,20 +5,21 @@ using UnityEngine.UIElements;
 [CustomEditor(typeof(Car))]
 public class Car_Inspector : Editor
 {
-    public VisualTreeAsset m_InspectorXML;
+    public VisualTreeAsset inspectorUXML;
     public override VisualElement CreateInspectorGUI()
     {
-        // Load the reference UXML.
-        m_InspectorXML= AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/create-a-custom-inspector/Car_Inspector_UXML.uxml");
+         // Create a new VisualElement to be the root of our Inspector UI.
+        VisualElement myInspector = new VisualElement();
 
-        // Instantiate the UXML.
-        VisualElement myInspector = m_InspectorXML.Instantiate();
+        // Add a simple label.
+        myInspector.Add(new Label("This is a custom Inspector"));
 
-        // Get a reference to the default Inspector Foldout control.
-        VisualElement InspectorFoldout = myInspector.Q("Default_Inspector");
-
-        // Attach a default Inspector to the Foldout.
-        InspectorElement.FillDefaultInspector(InspectorFoldout, serializedObject, this);
+        // Load the UXML file and clone its tree into the inspector.
+        if (inspectorUXML != null)
+        {
+            VisualElement uxmlContent = inspectorUXML.CloneTree();
+            myInspector.Add(uxmlContent);
+        }
 
         // Return the finished Inspector UI.
         return myInspector;

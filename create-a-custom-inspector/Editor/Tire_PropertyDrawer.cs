@@ -10,11 +10,10 @@ public class Tire_PropertyDrawer : PropertyDrawer
         // Create drawer UI using C#.
         var popup = new UnityEngine.UIElements.PopupWindow();
         popup.text = "Tire Details";
-        popup.Add(new PropertyField(property.FindPropertyRelative("m_AirPressure"), "Air Pressure (psi)"));
-        popup.Add(new PropertyField(property.FindPropertyRelative("m_ProfileDepth"), "Profile Depth (mm)"));
-        container.Add(popup);
+        popup.Add(new PropertyField(property.FindPropertyRelative("airPressure"), "Air Pressure (psi)"));
+        popup.Add(new PropertyField(property.FindPropertyRelative("profileDepth"), "Profile Depth (mm)"));
 
         // Return the finished UI.
-        return container;
+        return popup;
     }
 }
