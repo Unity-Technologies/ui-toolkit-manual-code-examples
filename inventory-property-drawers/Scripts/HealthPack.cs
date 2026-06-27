@@ -35,6 +35,9 @@ public partial class Gun : Item
     public float damage;
 
     [UxmlAttribute]
+    public float fireRate = 1;
+
+    [UxmlAttribute]
     public Ammo ammo = new Ammo { count = 10, maxCount = 10 };
 }
 
