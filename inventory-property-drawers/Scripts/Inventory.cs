@@ -8,6 +8,15 @@ public partial class Inventory
     Dictionary<int, Item> m_ItemDictionary = new Dictionary<int, Item>();
 
     [UxmlAttribute]
+    public string description;
+
+    [UxmlAttribute]
+    public int maxSlots = 10;
+
+    [UxmlAttribute]
+    public float maxWeight = 50;
+
+    [UxmlAttribute]
     int nextItemId = 1;
 
     [UxmlObjectReference("Items")]

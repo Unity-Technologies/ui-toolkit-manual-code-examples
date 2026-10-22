@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uitke="Unity.UIToolkit.Editor">
+    <!-- UxmlAttributeField auto-generates the appropriate field type with override/binding affordances. -->
+    <uitke:UxmlAttributeField binding-path="name" />
+    <uitke:UxmlAttributeField binding-path="weight" />
+    <uitke:UxmlAttributeField binding-path="damage" />
+
+    <!-- UxmlAttributeFieldDecorator wraps an explicit Slider instead of the default FloatField,
+         letting the user set fire rate within a defined range. -->
+    <uitke:UxmlAttributeFieldDecorator>
+        <ui:Slider label="Fire Rate" binding-path="fireRate"
+                   low-value="0.5" high-value="10" show-input-field="true"
+                   class="unity-base-field__aligned" />
+    </uitke:UxmlAttributeFieldDecorator>
+</ui:UXML>
