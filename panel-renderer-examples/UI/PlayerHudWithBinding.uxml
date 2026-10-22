@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:ProgressBar name="health" title="Health" low-value="0" high-value="100">
+        <Bindings>
+            <ui:DataBinding property="value" data-source-path="health" binding-mode="ToTarget" />
+        </Bindings>
+    </ui:ProgressBar>
+    <ui:Label name="score">
+        <Bindings>
+            <ui:DataBinding property="text" data-source-path="scoreText" binding-mode="ToTarget" />
+        </Bindings>
+    </ui:Label>
+</ui:UXML>
