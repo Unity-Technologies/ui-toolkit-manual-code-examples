@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uitke="Unity.UIToolkit.Editor">
+    <!-- UxmlAttributeField with binding-path auto-generates an IntegerField with override/binding affordances. -->
+    <uitke:UxmlAttributeField binding-path="maxSlots" label="Max Slots" />
+
+    <!-- UxmlAttributeFieldDecorator wraps an explicit Slider, letting you choose the field type
+         while still getting the override indicator bar and context menu. -->
+    <uitke:UxmlAttributeFieldDecorator>
+        <ui:Slider label="Max Weight" binding-path="maxWeight"
+                   low-value="0" high-value="200" show-input-field="true"
+                   class="unity-base-field__aligned" />
+    </uitke:UxmlAttributeFieldDecorator>
+</ui:UXML>

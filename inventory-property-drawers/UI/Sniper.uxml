@@ -1,9 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Character name="Sniper">
         <inventory>
-            <Inventory next-item-id="4">
+            <Inventory next-item-id="4" description="Sniper loadout" max-slots="10" max-weight="50">
                 <Items>
-                    <Gun id="1" name="Rifle" weight="4.5" damage="33" ammo="7/7" />
+                    <Gun id="1" name="Rifle" weight="4.5" damage="33" fire-rate="2.5" ammo="7/7" />
                     <Sword id="2" name="Knife" weight="0.5" slash-damage="7" />
                     <HealthPack id="3" />
                 </Items>
