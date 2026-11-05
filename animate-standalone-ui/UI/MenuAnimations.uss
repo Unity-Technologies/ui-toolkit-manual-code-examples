@@ -1,0 +1,7 @@
+.menu-button {
+}
+
+.menu-button:hover {
+    animation-name: url("MenuButtonHover.asset");
+    animation-iteration-count: infinite;
+}

@@ -75,3 +75,8 @@ You must follow the steps in the UI Toolkit user manual to create the examples. 
 - [Add hyperlinks in text](https://docs.unity3d.com/Documentation/Manual/ui-systems/add-hyperlinks-in-text.html)
 
 
+
+## Animation examples
+
+- [Get started with UI animation](https://docs.unity3d.com/Documentation/Manual/ui-systems/get-started-with-ui-animation.html)
+- [Animate standalone UI and create reusable animations](https://docs.unity3d.com/Documentation/Manual/ui-systems/animate-standalone-ui.html)
