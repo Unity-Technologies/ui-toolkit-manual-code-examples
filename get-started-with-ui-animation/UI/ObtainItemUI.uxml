@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: flex-end; align-items: center; padding-bottom: 25px;">
+        <ui:Label text="New item" name="ItemName" style="font-size: 90px;"/>
+        <ui:Button text="Claim" name="ClaimButton" style="font-size: 90px; scale: 1 1;"/>
+    </ui:VisualElement>
+</ui:UXML>

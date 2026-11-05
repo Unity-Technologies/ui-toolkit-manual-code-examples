@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="MenuAnimations.uss"/>
+    <ui:VisualElement name="Backdrop" style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement name="Menu" class="menu" style="scale: 2 2; top: 0; animation-name: url(&quot;MenuIntro.asset&quot;); animation-play-state: running;">
+            <ui:Label text="Main menu"/>
+            <ui:Button name="PlayButton" text="Play" class="menu-button" style="width: 200px;"/>
+            <ui:Button name="OptionsButton" text="Options" class="menu-button" style="width: 200px;"/>
+            <ui:Button name="QuitButton" text="Quit" class="menu-button" style="width: 200px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
